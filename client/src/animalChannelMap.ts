@@ -1,6 +1,11 @@
-export const animalChannelMap: Record<string, string> = {
-    lion: 'UCxxxxxxx', // Replace with actual Channel ID
-    tiger: 'UCyyyyyyy', // Replace with actual Channel ID
-    // Add other animals etc etc
-  };
-  
+export const animalChannelMap: { [key: string]: { channelId: string; streamId: string } } = {
+  'lion': {
+    channelId: 'UCXXXXXXX', // Replace with actual channel ID
+    streamId: 'XXXXXXXXXXX' // Replace with actual stream ID
+  },
+  'tiger': {
+    channelId: 'UCYYYYYYY', // Replace with actual channel ID
+    streamId: 'YYYYYYYYYYY' // Replace with actual stream ID
+  },
+  // etc etc
+};
