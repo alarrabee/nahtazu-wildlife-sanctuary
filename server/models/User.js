@@ -36,7 +36,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 var _a = require('mongoose'), Schema = _a.Schema, model = _a.model;
 var bcrypt = require('bcrypt');
-var favoritesSchema = require('./Favorites.js');
+// Define the user schema
 var userSchema = new Schema({
     username: {
         type: String,
@@ -57,13 +57,13 @@ var userSchema = new Schema({
         type: String,
         required: true,
     },
-    favoriteExhibits: [favoritesSchema],
+    // favoriteExhibits: [favoritesSchema],
     // posts: [{
     //     type: Schema.Types.ObjectId,
     //     ref: 'Post'
     // }],
 });
-// hash user password
+// Hash user password before saving
 userSchema.pre('save', function (next) {
     return __awaiter(this, void 0, void 0, function () {
         var saltRounds, _a;
@@ -84,7 +84,7 @@ userSchema.pre('save', function (next) {
         });
     });
 });
-// custom method to compare and validate password for logging in
+// Custom method to compare and validate password for logging in
 userSchema.methods.isCorrectPassword = function (password) {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
@@ -92,5 +92,5 @@ userSchema.methods.isCorrectPassword = function (password) {
         });
     });
 };
-var User = model('User', userSchema);
-module.exports = User;
+// Export the model
+module.exports = model('User', userSchema);
