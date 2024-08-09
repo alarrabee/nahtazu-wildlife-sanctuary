@@ -1,5 +1,5 @@
 const { User, Post, Comment } = require('../models');
-const { Favorite } = require('../models/Favorite');
+// const { Favorite } = require('../models/Favorite');
 const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
 

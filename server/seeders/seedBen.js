@@ -1,5 +1,5 @@
 const db = require('../config/connection');
-const { User } = require('../models');
+const User  = require('../models/User');
 const cleanDB = require('./cleanDB');
 const userSeeds = require('./userSeeds.json');
 

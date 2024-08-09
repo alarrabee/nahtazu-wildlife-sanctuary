@@ -37,7 +37,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var _a = require('../models'), User = _a.User, Post = _a.Post, Comment = _a.Comment;
-var Favorite = require('../models/Favorite').Favorite;
+// const { Favorite } = require('../models/Favorite');
 var AuthenticationError = require('apollo-server-express').AuthenticationError;
 var signToken = require('../utils/auth').signToken;
 var resolvers = {

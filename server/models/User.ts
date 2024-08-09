@@ -1,8 +1,7 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
-const favoritesSchema = require('./Favorites.js');
-
+// Define the user schema
 const userSchema = new Schema(
   {
     username: {
@@ -24,15 +23,15 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
-    favoriteExhibits: [favoritesSchema],
+    // favoriteExhibits: [favoritesSchema],
     // posts: [{
     //     type: Schema.Types.ObjectId,
     //     ref: 'Post'
     // }],
   },
-
 );
-// hash user password
+
+// Hash user password before saving
 userSchema.pre('save', async function (next) {
   if (this.isNew || this.isModified('password')) {
     const saltRounds = 10;
@@ -42,12 +41,10 @@ userSchema.pre('save', async function (next) {
   next();
 });
 
-// custom method to compare and validate password for logging in
+// Custom method to compare and validate password for logging in
 userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
 
-
-const User = model('User', userSchema);
-
-module.exports = User;
+// Export the model
+module.exports = model('User', userSchema);
