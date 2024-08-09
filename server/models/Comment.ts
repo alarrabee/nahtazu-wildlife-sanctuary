@@ -1,4 +1,4 @@
-import { Schema, Document } from 'mongoose';
+import { Schema, model, Document } from 'mongoose';
 import { formatDate } from '../utils/dateFormat';
 
 //interface for Comment subdocument
@@ -27,3 +27,8 @@ export const commentSchema = new Schema<IComment>({
     get: (timestamp: Date) => formatDate(timestamp),
   } as any,
 });
+
+//create and export the Post model
+const Comment = model<IComment>('Comment', commentSchema);
+
+export default Comment;
