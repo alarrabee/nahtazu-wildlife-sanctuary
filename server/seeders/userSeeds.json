@@ -1,0 +1,64 @@
+[
+    {
+      "name": "Brian Kernighan",
+      "username": "bkernighan",
+      "email": "bkernighan@techfriends.dev",
+      "password": "password01"
+    },
+    {
+      "name": "Max Kanat-Alexander",
+      "username": "maxkanatalexander",
+      "email": "mkanatalexander@techfriends.dev",
+      "password": "password02"
+    },
+    {
+      "name": "Amiko",
+      "username": "amiko",
+      "email": "amiko@techfriends.dev",
+      "password": "password03"
+    },
+    {
+      "name": "Kent Beck",
+      "username": "Kbeck",
+      "email": "kbeck@techfriends.dev",
+      "password": "password04"
+    },
+    {
+      "name": "Edward V. Berard",
+      "username": "EddyB",
+      "email": "evberard@techfriends.dev",
+      "password": "password05"
+    },
+    {
+      "name": "Alan Kay",
+      "username": "AK",
+      "email": "akay@techfriends.dev",
+      "password": "password06"
+    },
+    {
+      "name": "C.A.R. Hoare",
+      "username": "CarTime",
+      "email": "choare@techfriends.dev",
+      "password": "password07"
+    },
+    {
+      "name": "David Thomas",
+      "username": "DoubleTime",
+      "email": "dthomas@techfriends.dev",
+      "password": "password08"
+    },
+    {
+      "name": "Donald Knuth",
+      "username": "DonnieKnut",
+      "email": "dknuth@techfriends.dev",
+      "password": "password09"
+    },
+    {
+      "name": "Lernantino",
+      "username": "Lerny",
+      "email": "lernantino@techfriends.dev",
+      "password": "password10"
+    
+    }
+  ]
+  
