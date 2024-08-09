@@ -1,11 +1,14 @@
 export const animalChannelMap: { [key: string]: { channelId: string; streamId: string } } = {
-  'lion': {
-    channelId: 'UCXXXXXXX', // Replace with actual channel ID
-    streamId: 'XXXXXXXXXXX' // Replace with actual stream ID
-  },
   'tiger': {
-    channelId: 'UCYYYYYYY', // Replace with actual channel ID
-    streamId: 'YYYYYYYYYYY' // Replace with actual stream ID
+    channelId: 'UCC5NfQ6Mf0dq_eEwv4P_hWA', // Replace with actual channel ID
+    streamId: 'iJBgkQbSZS4' // Replace with actual stream ID
   },
-  // etc etc
+  'polarbear': {
+    channelId: 'UCC5NfQ6Mf0dq_eEwv4P_hWA', // Replace with actual channel ID
+    streamId: 'CpsQzkGobTA' // Replace with actual stream ID
+  },
+  'ape': {
+    channelId: 'UCC5NfQ6Mf0dq_eEwv4P_hWA', // Replace with actual channel ID
+    streamId: 'F_xdJ8K0i-k' // Replace with actual stream ID
+  },
 };
