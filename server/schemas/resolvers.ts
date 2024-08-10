@@ -1,4 +1,4 @@
-const { User, Post, Comment } = require('../models');
+const { User, Post } = require('../models');
 const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
 
@@ -85,4 +85,4 @@ const resolvers = {
     },
 };
 
-export default resolvers;
+module.exports = resolvers;

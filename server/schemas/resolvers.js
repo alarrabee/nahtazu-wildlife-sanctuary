@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -35,13 +34,13 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var _a = require('../models'), User = _a.User, Post = _a.Post, Comment = _a.Comment;
+var _this = this;
+var _a = require('../models'), User = _a.User, Post = _a.Post;
 var AuthenticationError = require('apollo-server-express').AuthenticationError;
 var signToken = require('../utils/auth').signToken;
 var resolvers = {
     Query: {
-        users: function () { return __awaiter(void 0, void 0, void 0, function () {
+        users: function () { return __awaiter(_this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, User.find({})];
@@ -49,7 +48,7 @@ var resolvers = {
                 }
             });
         }); },
-        user: function (_1, _a) { return __awaiter(void 0, [_1, _a], void 0, function (_, _b) {
+        user: function (_1, _a) { return __awaiter(_this, [_1, _a], void 0, function (_, _b) {
             var _id = _b._id;
             return __generator(this, function (_c) {
                 switch (_c.label) {
@@ -58,7 +57,7 @@ var resolvers = {
                 }
             });
         }); },
-        me: function (_, args, context) { return __awaiter(void 0, void 0, void 0, function () {
+        me: function (_, args, context) { return __awaiter(_this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 if (context.user) {
                     return [2 /*return*/, User.findById(context.user._id).populate('posts')];
@@ -66,7 +65,7 @@ var resolvers = {
                 throw new AuthenticationError('Not logged in');
             });
         }); },
-        posts: function () { return __awaiter(void 0, void 0, void 0, function () {
+        posts: function () { return __awaiter(_this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, Post.find({}).populate('postAuthor')];
@@ -74,7 +73,7 @@ var resolvers = {
                 }
             });
         }); },
-        post: function (_1, _a) { return __awaiter(void 0, [_1, _a], void 0, function (_, _b) {
+        post: function (_1, _a) { return __awaiter(_this, [_1, _a], void 0, function (_, _b) {
             var _id = _b._id;
             return __generator(this, function (_c) {
                 switch (_c.label) {
@@ -85,7 +84,7 @@ var resolvers = {
         }); },
     },
     Mutation: {
-        addUser: function (_1, _a) { return __awaiter(void 0, [_1, _a], void 0, function (_, _b) {
+        addUser: function (_1, _a) { return __awaiter(_this, [_1, _a], void 0, function (_, _b) {
             var user, token;
             var username = _b.username, email = _b.email, password = _b.password;
             return __generator(this, function (_c) {
@@ -98,7 +97,7 @@ var resolvers = {
                 }
             });
         }); },
-        removeUser: function (_, args, context) { return __awaiter(void 0, void 0, void 0, function () {
+        removeUser: function (_, args, context) { return __awaiter(_this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
@@ -109,7 +108,7 @@ var resolvers = {
                 }
             });
         }); },
-        login: function (_1, _a) { return __awaiter(void 0, [_1, _a], void 0, function (_, _b) {
+        login: function (_1, _a) { return __awaiter(_this, [_1, _a], void 0, function (_, _b) {
             var user, correctPw, token;
             var email = _b.email, password = _b.password;
             return __generator(this, function (_c) {
@@ -131,7 +130,7 @@ var resolvers = {
                 }
             });
         }); },
-        createPost: function (_1, _a) { return __awaiter(void 0, [_1, _a], void 0, function (_, _b) {
+        createPost: function (_1, _a) { return __awaiter(_this, [_1, _a], void 0, function (_, _b) {
             var postText, postAuthor, post;
             var input = _b.input;
             return __generator(this, function (_c) {
@@ -148,7 +147,7 @@ var resolvers = {
                 }
             });
         }); },
-        updatePost: function (_1, _a) { return __awaiter(void 0, [_1, _a], void 0, function (_, _b) {
+        updatePost: function (_1, _a) { return __awaiter(_this, [_1, _a], void 0, function (_, _b) {
             var _id, postText;
             var input = _b.input;
             return __generator(this, function (_c) {
@@ -160,7 +159,7 @@ var resolvers = {
                 }
             });
         }); },
-        deletePost: function (_1, _a) { return __awaiter(void 0, [_1, _a], void 0, function (_, _b) {
+        deletePost: function (_1, _a) { return __awaiter(_this, [_1, _a], void 0, function (_, _b) {
             var post;
             var _id = _b._id;
             return __generator(this, function (_c) {
@@ -179,7 +178,7 @@ var resolvers = {
     //resolves nested fields
     //will dynamically fetch and include related Post data for a User and returns a list of posts that were authored by this user
     User: {
-        posts: function (user) { return __awaiter(void 0, void 0, void 0, function () {
+        posts: function (user) { return __awaiter(_this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, Post.find({ postAuthor: user._id })];
@@ -189,7 +188,7 @@ var resolvers = {
         }); },
     },
     Post: {
-        postAuthor: function (post) { return __awaiter(void 0, void 0, void 0, function () {
+        postAuthor: function (post) { return __awaiter(_this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, User.findById(post.postAuthor)];
@@ -199,4 +198,4 @@ var resolvers = {
         }); },
     },
 };
-exports.default = resolvers;
+module.exports = resolvers;
