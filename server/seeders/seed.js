@@ -5,7 +5,7 @@ const userSeeds = require('./userSeeds.json');
 
 db.once('open', async () => {
   try {
-    await cleanDB('User');  // Pass only the collection name here
+    await cleanDB('users');  // Pass only the collection name here
     await User.create(userSeeds);
     console.log('Users seeded successfully!');
     process.exit(0);
