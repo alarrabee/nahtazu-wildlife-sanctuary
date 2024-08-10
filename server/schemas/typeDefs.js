@@ -1,5 +1,55 @@
-"use strict";
 // const { gql } = require('apollo-server-express');
-Object.defineProperty(exports, "__esModule", { value: true });
-var typeDefs = "\n  type Favorite {\n    exhibitId: ID!\n    title: String\n    description: String\n    image: String\n    link: String\n  }\n\n  type User {\n    _id: ID!\n    username: String!\n    email: String!\n    password: String!\n    posts: [Post] # A list of posts by the user\n    favoriteExhibits: [Favorite]\n  }\n\n  type Auth {\n    token: ID!\n    user: User\n  }\n\n  type Post {\n    id: ID!\n    postText: String!\n    postAuthor: User! # Reference to the user who authored the post\n    createdAt: String! # Formatted date as a string\n    comments: [Comment] # A list of comments on the post\n    }\n\n\ttype Comment {\n    id: ID!\n    commentText: String!\n    commentAuthor: User! # Reference to the user who authored the comment\n    createdAt: String! # Formatted date as a string\n\t}\n\n\tinput CreatePostInput {\n\t\tpostText: String!\n\t\tpostAuthor: ID! # User ID of the author\n\t}\n\n    input UpdatePostInput {\n    id: ID!\n    postText: String\n    }\n\n    input CreateCommentInput {\n    commentText: String!\n    commentAuthor: ID! # User ID of the comment author\n    postId: ID! # ID of the post to comment on\n    }\n\n    input UpdateCommentInput {\n    id: ID!\n    commentText: String\n    }\n        \n    type Query {\n\t\t\tusers: [User]!\n\t\t\tuser(userId: ID!): User\n\t\t\tme: User\n\t\t\tusers: [User] # Get a list of users\n\t\t\tuser(id: ID!): User # Get a user by ID\n\t\t\tposts: [Post] # Get a list of posts\n\t\t\tpost(id: ID!): Post # Get a post by ID\n\t}\n\n    type Mutation {\n\t\t\taddUser(username: String!, email: String!, password: String!): Auth\n\t\t\tlogin(email: String!, password: String!): Auth\n\t\t\taddFavorite(userId: ID!, exhibitId: ID!, title: String, description: String, image: String, link: String): User\n\t\t\tremoveFavorite(userId: ID!, exhibitId: ID!): User\n\t\t\tremoveUser: User\n\n\t\t\tcreatePost(input: CreatePostInput!): Post # Create a new post\n\t\t\tupdatePost(input: UpdatePostInput!): Post # Update an existing post\n\t\t\tdeletePost(id: ID!): Post # Delete an existing post\n\t\t\t\n\t\t\tcreateComment(input: CreateCommentInput!): Comment # Create a new comment\n\t\t\tupdateComment(input: UpdateCommentInput!): Comment # Update an existing comment\n\t\t\tdeleteComment(id: ID!): Comment # Delete an existing comment\n    }\n";
-exports.default = typeDefs;
+
+const typeDefs = `
+  type User {
+    _id: ID!
+    username: String!
+    email: String!
+    password: String!
+    posts: [Post]           # A list of posts by the user
+  }
+
+  type Auth {
+    token: ID!
+    user: User
+  }
+
+  type Post {
+    _id: ID!
+    postText: String!
+    postAuthor: User!           # Reference to the user who authored the post
+    createdAt: String!          # Formatted date as a string
+    }
+
+	input CreatePostInput {
+		postText: String!
+		postAuthor: ID!         # User ID of the author
+	}
+
+    input UpdatePostInput {
+    _id: ID!
+    postText: String
+    }
+        
+    type Query {
+			me: User
+			users: [User]           # Get a list of users
+			user(_id: ID!): User     # Get a user by ID
+
+			posts: [Post]           # Get a list of posts
+			post(_id: ID!): Post     # Get a post by ID
+	}
+
+    type Mutation {
+			addUser(username: String!, email: String!, password: String!): Auth
+			login(email: String!, password: String!): Auth
+			removeUser: User
+
+			createPost(input: CreatePostInput!): Post       # Create a new post
+			updatePost(input: UpdatePostInput!): Post       # Update an existing post
+			deletePost(_id: ID!): Post                       # Delete an existing post
+			
+    }
+`;
+
+module.exports = typeDefs;
