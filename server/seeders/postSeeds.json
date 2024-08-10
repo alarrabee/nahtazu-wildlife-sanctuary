@@ -1,0 +1,11 @@
+[
+    {
+      "postText": "This is John Doe's first post!",
+      "postAuthor": "johnDoe"
+    },
+    {
+      "postText": "Jane Smith sharing her thoughts.",
+      "postAuthor": "janeSmith"
+    }
+  ]
+  

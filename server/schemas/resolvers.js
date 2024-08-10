@@ -1,85 +1,87 @@
-const { Profile } = require('../models');
+const { User, Post } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
 
 const resolvers = {
-  Query: {
-    profiles: async () => {
-      return Profile.find();
+    Query: {
+        users: async () => {
+            return await User.find({});
+        },
+        user: async (_, { _id }) => {
+            return await User.findById(_id);
+        },
+        me: async (_, args, context) => {
+            if (context.user) {
+                return User.findById(context.user._id).populate('posts');
+            }
+            throw new AuthenticationError('Not logged in');
+        },
+
+
+        posts: async () => {
+            return await Post.find({}).populate('postAuthor');
+        },
+        post: async (_, { _id }) => {
+            return await Post.findById(_id).populate('postAuthor');
+        },
     },
 
-    profile: async (parent, { profileId }) => {
-      return Profile.findOne({ _id: profileId });
-    },
-    // By adding context to our query, we can retrieve the logged in user without specifically searching for them
-    me: async (parent, args, context) => {
-      if (context.user) {
-        return Profile.findOne({ _id: context.user._id });
-      }
-      throw AuthenticationError;
-    },
-  },
 
-  Mutation: {
-    addProfile: async (parent, { name, email, password }) => {
-      const profile = await Profile.create({ name, email, password });
-      const token = signToken(profile);
+    Mutation: {
+        addUser: async (_, { username, email, password }) => {
+            const user = await User.create({ username, email, password });
+            const token = signToken(user);
+            return { token, user };
+        },
+        removeUser: async (_, args, context) => {
+            if (context.user) {
+                return await User.findByIdAndDelete(context.user._id);
+            }
+            throw new AuthenticationError('Not logged in');
+        },
 
-      return { token, profile };
+
+        login: async (_, { email, password }) => {
+            const user = await User.findOne({ email });
+            if (!user) {
+                throw new AuthenticationError('Incorrect credentials');
+            }
+            const correctPw = await user.isCorrectPassword(password);
+            if (!correctPw) {
+                throw new AuthenticationError('Incorrect credentials');
+            }
+            const token = signToken(user);
+            return { token, user };
+        },
+
+
+        createPost: async (_, { input }) => {
+            const { postText, postAuthor } = input;
+            const post = await Post.create({ postText, postAuthor });
+            await User.findByIdAndUpdate(postAuthor, { $push: { posts: post._id } });
+            return post.populate('postAuthor');
+        },
+        updatePost: async (_, { input }) => {
+            const { _id, postText } = input;
+            return await Post.findByIdAndUpdate( _id, { postText }, { new: true }).populate('postAuthor');
+        },
+        deletePost: async (_, { _id }) => {
+            const post = await Post.findByIdAndDelete(_id);
+            await User.findByIdAndUpdate(post.postAuthor, { $pull: { posts: _id } });
+            return post;
+        },
     },
-    login: async (parent, { email, password }) => {
-      const profile = await Profile.findOne({ email });
-
-      if (!profile) {
-        throw AuthenticationError;
-      }
-
-      const correctPw = await profile.isCorrectPassword(password);
-
-      if (!correctPw) {
-        throw AuthenticationError;
-      }
-
-      const token = signToken(profile);
-      return { token, profile };
+    //resolves nested fields
+    //will dynamically fetch and include related Post data for a User and returns a list of posts that were authored by this user
+    User: {
+        posts: async (user) => {
+        return await Post.find({ postAuthor: user._id });
+        },
     },
-
-    // Add a third argument to the resolver to access data in our `context`
-    addSkill: async (parent, { profileId, skill }, context) => {
-      // If context has a `user` property, that means the user executing this mutation has a valid JWT and is logged in
-      if (context.user) {
-        return Profile.findOneAndUpdate(
-          { _id: profileId },
-          {
-            $addToSet: { skills: skill },
-          },
-          {
-            new: true,
-            runValidators: true,
-          }
-        );
-      }
-      // If user attempts to execute this mutation and isn't logged in, throw an error
-      throw AuthenticationError;
+    Post: {
+        postAuthor: async (post) => {
+        return await User.findById(post.postAuthor);
+        },
     },
-    // Set up mutation so a logged in user can only remove their profile and no one else's
-    removeProfile: async (parent, args, context) => {
-      if (context.user) {
-        return Profile.findOneAndDelete({ _id: context.user._id });
-      }
-      throw AuthenticationError;
-    },
-    // Make it so a logged in user can only remove a skill from their own profile
-    removeSkill: async (parent, { skill }, context) => {
-      if (context.user) {
-        return Profile.findOneAndUpdate(
-          { _id: context.user._id },
-          { $pull: { skills: skill } },
-          { new: true }
-        );
-      }
-      throw AuthenticationError;
-    },
-  },
 };
 
 module.exports = resolvers;
