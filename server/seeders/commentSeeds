@@ -1,0 +1,22 @@
+[
+  {
+    "commentText": "The lions are indeed impressive. Did you see the new exhibit?",
+    "commentAuthor": "maxkanatalexander",
+    "createdAt": "2024-08-09T13:00:00Z"
+  },
+  {
+    "commentText": "I love the zoo! It's always a great day out.",
+    "commentAuthor": "amiko",
+    "createdAt": "2024-08-09T14:00:00Z"
+  },
+  {
+    "commentText": "I haven't seen it yet. How are the giraffes adjusting?",
+    "commentAuthor": "bkernighan",
+    "createdAt": "2024-08-09T13:30:00Z"
+  },
+  {
+    "commentText": "Penguins are so cute! Did they do any tricks today?",
+    "commentAuthor": "carTime",
+    "createdAt": "2024-08-09T14:30:00Z"
+  }
+]
