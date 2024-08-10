@@ -1,7 +1,55 @@
-var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
-    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
-    return cooked;
-};
-var gql = require('apollo-server-express').gql;
-var typeDefs = gql(__makeTemplateObject(["\n  type User {\n    _id: ID!\n    username: String!\n    email: String!\n    password: String!\n    posts: [Post]           # A list of posts by the user\n  }\n\n  type Auth {\n    token: ID!\n    user: User\n  }\n\n  type Post {\n    _id: ID!\n    postText: String!\n    postAuthor: User!           # Reference to the user who authored the post\n    createdAt: String!          # Formatted date as a string\n    }\n\n\tinput CreatePostInput {\n\t\tpostText: String!\n\t\tpostAuthor: ID!         # User ID of the author\n\t}\n\n    input UpdatePostInput {\n    _id: ID!\n    postText: String\n    }\n        \n    type Query {\n\t\t\tme: User\n\t\t\tusers: [User]           # Get a list of users\n\t\t\tuser(_id: ID!): User     # Get a user by ID\n\n\t\t\tposts: [Post]           # Get a list of posts\n\t\t\tpost(_id: ID!): Post     # Get a post by ID\n\t}\n\n    type Mutation {\n\t\t\taddUser(username: String!, email: String!, password: String!): Auth\n\t\t\tlogin(email: String!, password: String!): Auth\n\t\t\tremoveUser: User\n\n\t\t\tcreatePost(input: CreatePostInput!): Post       # Create a new post\n\t\t\tupdatePost(input: UpdatePostInput!): Post       # Update an existing post\n\t\t\tdeletePost(_id: ID!): Post                       # Delete an existing post\n\t\t\t\n    }\n"], ["\n  type User {\n    _id: ID!\n    username: String!\n    email: String!\n    password: String!\n    posts: [Post]           # A list of posts by the user\n  }\n\n  type Auth {\n    token: ID!\n    user: User\n  }\n\n  type Post {\n    _id: ID!\n    postText: String!\n    postAuthor: User!           # Reference to the user who authored the post\n    createdAt: String!          # Formatted date as a string\n    }\n\n\tinput CreatePostInput {\n\t\tpostText: String!\n\t\tpostAuthor: ID!         # User ID of the author\n\t}\n\n    input UpdatePostInput {\n    _id: ID!\n    postText: String\n    }\n        \n    type Query {\n\t\t\tme: User\n\t\t\tusers: [User]           # Get a list of users\n\t\t\tuser(_id: ID!): User     # Get a user by ID\n\n\t\t\tposts: [Post]           # Get a list of posts\n\t\t\tpost(_id: ID!): Post     # Get a post by ID\n\t}\n\n    type Mutation {\n\t\t\taddUser(username: String!, email: String!, password: String!): Auth\n\t\t\tlogin(email: String!, password: String!): Auth\n\t\t\tremoveUser: User\n\n\t\t\tcreatePost(input: CreatePostInput!): Post       # Create a new post\n\t\t\tupdatePost(input: UpdatePostInput!): Post       # Update an existing post\n\t\t\tdeletePost(_id: ID!): Post                       # Delete an existing post\n\t\t\t\n    }\n"]));
+// const { gql } = require('apollo-server-express');
+
+const typeDefs = `
+  type User {
+    _id: ID!
+    username: String!
+    email: String!
+    password: String!
+    posts: [Post]           # A list of posts by the user
+  }
+
+  type Auth {
+    token: ID!
+    user: User
+  }
+
+  type Post {
+    _id: ID!
+    postText: String!
+    postAuthor: User!           # Reference to the user who authored the post
+    createdAt: String!          # Formatted date as a string
+    }
+
+	input CreatePostInput {
+		postText: String!
+		postAuthor: ID!         # User ID of the author
+	}
+
+    input UpdatePostInput {
+    _id: ID!
+    postText: String
+    }
+        
+    type Query {
+			me: User
+			users: [User]           # Get a list of users
+			user(_id: ID!): User     # Get a user by ID
+
+			posts: [Post]           # Get a list of posts
+			post(_id: ID!): Post     # Get a post by ID
+	}
+
+    type Mutation {
+			addUser(username: String!, email: String!, password: String!): Auth
+			login(email: String!, password: String!): Auth
+			removeUser: User
+
+			createPost(input: CreatePostInput!): Post       # Create a new post
+			updatePost(input: UpdatePostInput!): Post       # Update an existing post
+			deletePost(_id: ID!): Post                       # Delete an existing post
+			
+    }
+`;
+
 module.exports = typeDefs;
