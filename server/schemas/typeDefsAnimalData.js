@@ -68,3 +68,21 @@ const typeDefs = gql`
 `;
 
 module.exports = typeDefs;
+///////////////////////////////
+//get animal by name typeDef
+import { gql } from '@apollo/client';
+
+export const GET_ANIMAL = gql`
+  query GetAnimal($name: String!) {
+    getAnimal(name: $name) {
+      name
+      species
+      habitat
+      diet
+      lifespan
+      status
+      description
+      imageUrl
+    }
+  }
+`;
