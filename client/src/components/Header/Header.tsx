@@ -6,7 +6,7 @@ import { Col, Divider, Row } from 'antd';
 import {Button, Flex} from 'antd';
 
 import type { FlexProps} from 'antd'
-}
+
 const headerStyle: React.CSSProperties ={
     width : '100%',
     height: 120,
@@ -22,7 +22,7 @@ function Header() {
     <header className="header">
             <img src="./assets/logo.png" alt="Zoo Logo" className="logo" />
             <nav>
-            <Flex style={boxStyle} justify= 'flex-end' align='center'>
+            <Flex style= {headerStyle} justify= 'flex-end' align='center'>
         <Button> Animals </Button>
         <Button> About Us </Button>
         <Button> Login </Button>

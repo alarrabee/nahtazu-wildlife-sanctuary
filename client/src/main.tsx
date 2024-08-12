@@ -34,3 +34,46 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <RouterProvider router={router} />
 );
 
+// import React from 'react'
+
+// import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+
+// import ReactDOM from 'react-dom/client'
+
+// import App from './App.tsx';
+// import Home from './pages/Home.tsx';
+// import Login from './pages/Login.tsx';
+// import SingleAnimal from './pages/SingleAnimal.tsx';
+// import Animals from './pages/Animals.tsx';
+// import About from './pages/About.tsx';
+// import ErrorPage from './pages/ErrorPage.tsx';
+
+// const router = createBrowserRouter([
+//     {
+//       path: '/',
+//       element: <App />,
+//       errorElement: <ErrorPage />,
+//        children: [
+//          {
+//            index: true,
+//            element: <Home />
+//          }, {
+//             path:'/Login',
+//             element:<Login />
+//          },{
+//            path: '/Animals',
+//            element: <Animals />
+//          },{
+//           path: '/Animals/:id',
+//           element: <SingleAnimal />
+//          },{
+//           path: '/About',
+//           element: <About />
+//          }
+//        ]
+//      }
+//    ])
+
+
+//    ReactDOM.createRoot(document.getElementById('root')).render(
+//        <RouterProvider router={router} />
