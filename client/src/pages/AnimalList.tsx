@@ -41,6 +41,13 @@ const AnimalList = () => {
                         </a>
                     </Popup>
                 </Marker>
+                <Marker position={[44.7686, -93.198]}>
+                <Popup>
+                        <a href="/animal/tiger" style={{ textDecoration: 'none', color: 'black' }}>
+                            tiger Exhibit
+                        </a>
+                    </Popup>
+                </Marker>
             </MapContainer>
 
         </div>
