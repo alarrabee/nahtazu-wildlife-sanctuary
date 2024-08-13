@@ -7,6 +7,8 @@ import {Button, Flex} from 'antd';
 
 import type { FlexProps} from 'antd'
 
+import Auth from '../utils/auth';
+
 const headerStyle: React.CSSProperties ={
     width : '100%',
     height: 120,

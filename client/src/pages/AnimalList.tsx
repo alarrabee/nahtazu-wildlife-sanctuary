@@ -12,6 +12,7 @@ const AnimalList = () => {
     const center: LatLngTuple = [44.7685, -93.200];
 
     return (
+        <>
         <div>
             <h1>Animal List</h1>
             <ul>
@@ -21,7 +22,6 @@ const AnimalList = () => {
                     </li>
                 ))}
             </ul>
-
             <MapContainer 
                 center={center} 
                 zoom={17} 
@@ -51,6 +51,7 @@ const AnimalList = () => {
             </MapContainer>
 
         </div>
+        </>
     );
 };
 
