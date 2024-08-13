@@ -12,23 +12,31 @@ interface AnimalChannel {
 }
 
 const animalChannelMap: { [key: string]: AnimalChannel } = {
-  'tiger': {
-    channelId: 'UCC5NfQ6Mf0dq_eEwv4P_hWA',
-    streamId: 'iJBgkQbSZS4' 
-  },
-  'polar_bear': {
-    channelId: 'UCC5NfQ6Mf0dq_eEwv4P_hWA', 
-    streamId: 'CpsQzkGobTA' 
-  },
   'ape': {
     channelId: 'UCC5NfQ6Mf0dq_eEwv4P_hWA',
     streamId: 'F_xdJ8K0i-k' 
   },
-  'sea_otter': {
-    channelId: 'UCnM5iMGiKsZg-iOlIO2ZkdQ',
-    streamId: 'WrKZzs-CB_8'
+  'elephant': {
+    channelId: 'UC3DWrk_z1sH3ix1QNQTFr7w',
+    streamId: 'VUJbDTIYlM4'
   },
-  'panda_bear': {
+  'giraffe': {
+    channelId: 'UCS9UBqaUtoIXUhX0J1BnxwQ',
+    streamId: 'hNexlUkTTuc'
+  },
+  'jellyfish': {
+    channelId: 'UCnM5iMGiKsZg-iOlIO2ZkdQ',
+    streamId: 'OMlf71t2oV0'
+  },
+  'lion': {
+    channelId: 'UCS9UBqaUtoIXUhX0J1BnxwQ',
+    streamId: 'gTz_7tKUfYM' 
+  },
+  'manatee': {
+    channelId: 'UC-2KSeUU5SMCX6XLRD-AEvw',
+    streamId: 'yPSYdCWRWFA'
+  },
+  'panda bear': {
     channelId: 'UC2Sk0aXLq3ADkH_USGPKT_Q',
     streamId: '3szkFHfr6sA'
   },
@@ -36,31 +44,28 @@ const animalChannelMap: { [key: string]: AnimalChannel } = {
     channelId: 'UC8NnosPOvXnm0O1u5YnLQiw',
     streamId: 'eXfpXKP6qVE'
   },
-  'jellyfish': {
-    channelId: 'UCnM5iMGiKsZg-iOlIO2ZkdQ',
-    streamId: 'OMlf71t2oV0'
+  'polar bear': {
+    channelId: 'UCC5NfQ6Mf0dq_eEwv4P_hWA', 
+    streamId: 'CpsQzkGobTA' 
   },
-  'elephant': {
-    channelId: 'UC3DWrk_z1sH3ix1QNQTFr7w',
-    streamId: 'VUJbDTIYlM4'
-  },
-  'red_panda': {
+  'red panda': {
     channelId: 'UCQv8IYkfj8RAPDHGHivaQIA',
     streamId: 'e3EP1XCH0KQ'
   },
-  'giraffe': {
-    channelId: 'UCS9UBqaUtoIXUhX0J1BnxwQ',
-    streamId: 'hNexlUkTTuc'
-  },
-  'manatee': {
-    channelId: 'UC-2KSeUU5SMCX6XLRD-AEvw',
-    streamId: 'yPSYdCWRWFA'
+  'sea otter': {
+    channelId: 'UCbzl-qtfTKY9QNgtnqmuyBw',
+    streamId: 'Wq0x7Vw3DGw'
   },
   'sloth': {
     channelId: 'UC-2KSeUU5SMCX6XLRD-AEvw',
     streamId: 'g_L1Ay8P244'
   },
+  'tiger': {
+    channelId: 'UCC5NfQ6Mf0dq_eEwv4P_hWA',
+    streamId: 'iJBgkQbSZS4' 
+  },
 };
+
 
 const AnimalProfile: React.FC = () => {
   const { name } = useParams<{ name: string }>();
