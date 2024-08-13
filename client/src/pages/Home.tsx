@@ -1,53 +1,58 @@
-import Header from '../components/Header';
+import { Link } from 'react-router-dom';
 
-import Footer from '../components/Footer';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 
-import React from 'react';
+import { LatLngTuple } from 'leaflet';
+import CarouselPic from '../components/Carousel'
+import 'leaflet/dist/leaflet.css';
 
-import {Carousel} from 'antd';
-
-const { Header, Footer } = Layout;
-
-const contentStyle: React.CSSProperties= {
-  margin: 0,
-  height: '160px',
-  color: '#fff',
-  lineHeight: '160px',
-  textAlign: 'center',
-  background: '#364d79',
-};
+import styles from './AnimalList.module.css'; // Import CSS module
 
 
 
+const Home = () => {
+    const animals = ['Elephant', 'Tiger', 'Lion']; // List of animals
+    const center: LatLngTuple = [44.7685, -93.200];
 
-const Home: React.FC = () => {
-  const onChange = (currentSlide: number) => {
-    console.log(currentSlide);
-  };
-  return (
-    <Layout>
-      <Header/>
-      <body>
-      <Carousel afterChange={onChange}>
-      <div>
-        <h3 style={contentStyle}><img src="" alt="Image of Fish" /></h3>
-      </div>
-      <div>
-        <h3 style={contentStyle}><img src="" alt="Image of Birds" /></h3>
-      </div>
-      <div>
-        <h3 style={contentStyle}><img src="" alt="Image of Mammal" /></h3>
-      </div>
-      <div>
-        <h3 style={contentStyle}><img src="" alt="Image of Reptile" /></h3>
-      </div>
-    </Carousel>
+    return (
         <div>
-          At Nahtazu, our mission is to inspire and educate the public about wildlife conservation through immersive experiences and exceptional animal care. We are dedicated to preserving biodiversity and fostering a deeper understanding of the natural world, while promoting sustainable practices and engaging in global conservation efforts. Our commitment is to provide a safe, enriching environment for our animals and to create lasting connections between people and the planet.
+            
+            <h1>Welcome to Nahtazu</h1>
+           <CarouselPic/>
+           <div>At Nahtazu, our mission is to inspire and educate the public about wildlife conservation through immersive experiences and exceptional animal care. We are dedicated to preserving biodiversity and fostering a deeper understanding of the natural world, while promoting sustainable practices and engaging in global conservation efforts. Our commitment is to provide a safe, enriching environment for our animals and to create lasting connections between people and the planet.
+           </div>
+            
+            <ul>
+                {animals.map(animal => (
+                    <li key={animal}>
+                        <Link to={`/animal/${encodeURIComponent(animal)}`}>{animal}</Link>
+                    </li>
+                ))}
+            </ul>
+
+            <MapContainer 
+                center={center} 
+                zoom={17} 
+                className={styles.mapContainer} // Use the class from the CSS module
+                style={{ height: '600px', width: '100%' }}
+                // Pass options to the map
+                scrollWheelZoom={false}
+                dragging={false}
+            >
+                <TileLayer
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                />
+                <Marker position={center}>
+                <Popup>
+                        <a href="/animal/elephant" style={{ textDecoration: 'none', color: 'black' }}>
+                            Elephant Exhibit
+                        </a>
+                </Popup>
+                </Marker>
+            </MapContainer>
+
         </div>
-      </body>
-      <Footer/>
-    </Layout>
-  );
+    );
+};
 
 export default Home;

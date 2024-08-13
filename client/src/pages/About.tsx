@@ -1,12 +1,8 @@
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 import React from 'react';
 import {Divider} from 'antd'
 
 
 const Home: React.FC =()=>(
-    <Layout>
-      <Header/>
       <body>
     <p>
       Welcome to Nahtazu... while our name might make you think different when you hear it we are in-fact a zoo! Although only a virtual one if you have time please take a moment to read below about us and our work.
@@ -43,8 +39,6 @@ const Home: React.FC =()=>(
     Nahtazu Team
     </p>
       </body>
-      <Footer/>
-    </Layout>
   );
 
   export default Home;

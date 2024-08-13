@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import App from './App'; // Main app component (ensure it's a .tsx file)
+import Home from './pages/Home';
 import AnimalList from './pages/AnimalList'; // Animal list component (ensure it's a .tsx file)
 import AnimalProfile from './pages/AnimalProfile'; // Animal profile component (ensure it's a .tsx file)
 import Login from './components/LoginForm';
 import Signup from './components/SignupForm';
+import About from './pages/About';
 
 
 
@@ -19,11 +21,11 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <AnimalList />, // Default route
+        element: <Home/>, // Default route
       },
       {
         path: '/animal-list',
-        element: <AnimalList />,
+        element: <AnimalList/>,
       },
       {
         path: '/animal/:name',
@@ -36,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: '/signup',
         element: <Signup />
+      },
+      {
+        path: '/About',
+        element: <About />
       }
     ],
   },
