@@ -1,33 +1,38 @@
 import { Link } from 'react-router-dom';
+
 import REACT from 'react';
+
+import logo from '../../assets/logo.png'
+
 import {Button, Flex} from 'antd';
+
 import type { FlexProps} from 'antd';
+
+
 
 const footerStyle: React.CSSProperties ={
     width : '100%',
     height: 120,
     borderRadius: 6, 
-    border: '1px solid black'
+    border: '1px solid black',
 };
-const buttonStyle: React.CSSProperties={
-    
-}
 
 function Footer() {
     return(
         <footer style ={footerStyle}>
 
-        <img src="assets/logo.png" alt="zoo logo"></img>
+        
+       
+      
+        <Flex wrap gap = 'large'style={footerStyle} justify= 'flex-end' align='center'>
+            <Link to = "/"><img src={logo} alt="Zoo logo"></img></Link>
              <p> Nahtazu Zoo
                 123 Safari Lane
                 Greenwood, MN 55210</p>
-       
-      
-        <Flex wrap gap = 'large'style={buttonStyle} justify= 'flex-end' align='center'>
-        <Button type="primary">Home</Button>
-        <Button type="primary">Animals</Button>
-        <Button type="primary">About Us</Button>
-        <Button type="primary">Login</Button>
+            <Link  to = "/Animals"><Button> Animals </Button></Link>
+            <Link to ="/About"><Button> About Us </Button></Link>
+            <Link to ="/Login"><Button > Login </Button></Link>
+            <Link to = "/SignUp"><Button> Sign Up</Button></Link>
         </Flex>
         </footer>
     );

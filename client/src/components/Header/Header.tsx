@@ -1,13 +1,8 @@
 import { Link } from 'react-router-dom';
-import REACT from 'react';
-//this allows the spacing from ant design
-import { Col, Divider, Row } from 'antd';
 
 import {Button, Flex} from 'antd';
 
-import type { FlexProps} from 'antd'
-
-import Auth from '../utils/auth';
+import logo from '../../assets/logo.png'
 
 const headerStyle: React.CSSProperties ={
     width : '100%',
@@ -19,18 +14,19 @@ const headerStyle: React.CSSProperties ={
 
 
 
-function Header() {
+const Header = () => {
      return (
-    <header className="header">
-            <img src="./assets/logo.png" alt="Zoo Logo" className="logo" />
-            <nav>
-            <Flex style= {headerStyle} justify= 'flex-end' align='center'>
-        <Button> Animals </Button>
-        <Button> About Us </Button>
-        <Button> Login </Button>
+    <div className="header">
+            <nav>       
+            <Flex wrap gap = 'large'style={headerStyle} justify= 'flex-end' align='center'>
+                <Link to ="/"><img src={logo} alt="Zoo Logo" className="logo" /></Link>
+                <Link  to = "/Animals"><Button> Animals </Button></Link>
+                <Link to ="/About"><Button> About Us </Button></Link>
+                <Link to ="/Login"><Button > Login </Button></Link>
+                <Link to = "/SignUp"><Button> Sign Up</Button></Link>
             </Flex>
             </nav>
-        </header>
+    </div>
     );
 }
 
