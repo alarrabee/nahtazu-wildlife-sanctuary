@@ -1,38 +1,57 @@
 import React, { useState } from 'react';
+import { useMutation } from '@apollo/client';
+import { LOGIN_USER } from '../utils/mutations';
+import AuthService from '../utils/auth';
 
-export default function LoginForm() {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    
-    const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setEmail(e.target.value);
-    };
-    
-    const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setPassword(e.target.value);
-    };
-    
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        console.log('Email:', email);
-        console.log('Password:', password);
-    };
-    
-    return (
-        <form onSubmit={handleSubmit}>
-        <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={handleEmailChange}
-        />
-        <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={handlePasswordChange}
-        />
-        <button type="submit">Login</button>
-        </form>
-    );
+const Login = () => {
+  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [login, { error, data }] = useMutation(LOGIN_USER);
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const { data } = await login({
+        variables: { ...formState },
+      });
+
+      if (data?.login?.token) {
+        AuthService.login(data.login.token);
+      }
+    } catch (e) {
+      console.error('Login failed:', e);
     }
+  };
+
+  return (
+    <form onSubmit={handleFormSubmit}>
+      <input
+        name="email"
+        type="email"
+        placeholder="Email"
+        value={formState.email}
+        onChange={handleChange}
+      />
+      <input
+        name="password"
+        type="password"
+        placeholder="Password"
+        value={formState.password}
+        onChange={handleChange}
+      />
+      <button type="submit">Login</button>
+      {error && (
+        <div>Error: {error.message}</div>
+      )}
+    </form>
+  );
+};
+
+export default Login;
