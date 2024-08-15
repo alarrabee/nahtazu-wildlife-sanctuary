@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import App from './App'; // Main app component (ensure it's a .tsx file)
 import Home from './pages/Home';
+import Animals from './pages/Animals.tsx';
 import AnimalList from './pages/AnimalList'; // Animal list component (ensure it's a .tsx file)
 import AnimalProfile from './pages/AnimalProfile'; // Animal profile component (ensure it's a .tsx file)
 import Login from './components/LoginForm';
@@ -47,7 +48,11 @@ const router = createBrowserRouter([
       {
         path: '/Reviews',
         element: <ReviewsPage />
-      }
+      },
+      {
+        path: '/Animals',
+        element: <Animals />
+      },
     ],
   },
 ]);
