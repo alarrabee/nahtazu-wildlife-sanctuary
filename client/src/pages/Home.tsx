@@ -11,7 +11,23 @@ import styles from './AnimalList.module.css'; // Import CSS module
 
 
 const Home = () => {
-    const animals = ['Elephant', 'Tiger', 'Lion']; // List of animals
+    const animals = [
+        'Ape',
+        'Coral',
+        'Elephant', 
+        'Hummingbird',
+        'Giraffe', 
+        'Jellyfish', 
+        'Lion', 
+        'Manatee', 
+        'Owl', 
+        'Penguin', 
+        'Red Panda', 
+        'Shark', 
+        'Sloth', 
+        'Tiger',
+        'Wolf'
+    ]; // List of animals
     const center: LatLngTuple = [44.7685, -93.200];
 
     return (
