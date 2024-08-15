@@ -1,12 +1,12 @@
-import {Link} from "react-router-dom"
-
-import React from 'react';
-
+import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import { Card } from 'antd';
+
 
 const { Meta } = Card;
 
 const Animals: React.FC = () => {
+  const [animalImages, setAnimalImages] = useState<{ [key: string]: string }>({});
   const animals = [
     'Ape', 
     'Elephant', 
@@ -22,51 +22,43 @@ const Animals: React.FC = () => {
     'Sloth', 
     'Tiger'
   ];
-function getImage(animal :any){
-  const url =`https://api.unsplash.com/search/photos?query=${encodeURIComponent(animal)}&client_id=nMpA-A9vEG4eiUgeOGv7U2WhXzQ10QOEvRaj2Q7jC6o`
-  let imageEl = null;
-  fetch(url).then(function(response){return response.json();
-  }).then(function(data){
-    let image = document.createElement("img");
-    image.setAttribute("src", data.results[0].urls.regular)
-    image.setAttribute("alt", "photo of animal")
-    console.log (image);
-    imageEl = image;
-    return(image)
-  })
-  
-  console.log(imageEl);
-  return imageEl;
-};
- return(
-    <div>
-    <h1>Here are all the wonderful animals at Nahtazu</h1>
-    {animals.map(animal => (
 
-                  <Link to ={`/animal/${encodeURIComponent(animal)}`}>
-                    <Card key ={animal}
-                    hoverable
-                    style={{ width: 240 }}
-                    cover ={ getImage(animal) }
-                  >
-                    <Meta title= {animal} description="Click Here to learn More!" /> 
-                 
-                    </Card></Link>
-                ))}
-  
+  useEffect(() => {
+    animals.forEach(animal => {
+      fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(animal)}&client_id=nMpA-A9vEG4eiUgeOGv7U2WhXzQ10QOEvRaj2Q7jC6o`)
+        .then(response => response.json())
+        .then(data => {
+          if (data.results.length > 0) {
+            setAnimalImages(prevImages => ({
+              ...prevImages,
+              [animal]: data.results[0].urls.regular
+            }));
+          }
+        })
+        .catch(error => {
+          console.error("Error fetching image:", error);
+        });
+    });
+  }, []);
+
+  return (
+    <>
+    <h1 style={{ textAlign: 'center' }}>Here are all the wonderful animals at Nahtazu</h1>
+    <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around' }}>
+      {animals.map(animal => (
+        <Link to={`/animal/${encodeURIComponent(animal)}`} key={animal} style={{ margin: '10px', textDecoration: 'none' }}>
+          <Card
+            hoverable
+            style={{ width: 240 }}
+            cover={<img alt={`photo of ${animal}`} src={animalImages[animal]} style={{ height: 160, objectFit: 'cover' }} />}
+          >
+            <Meta title={animal} description="Click Here to learn More!" />
+          </Card>
+        </Link>
+      ))}
     </div>
- )
+    </>
+  );
 }
 
 export default Animals;
-
-
-
-{/* <Card
-    hoverable
-    style={{ width: 240 }}
-    cover={<img alt= "picture of animal" src={animal.imageUrl} />}
-  >
-    <Meta title="" description="Click Here to learn More!" />
-    <Link to ={`/animal/${encodeURIComponent(animal)}`}> </Link>
-    </Card> */}

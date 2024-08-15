@@ -26,22 +26,22 @@ const AnimalList = () => {
         'Wolf'
       ];
       
-    const center: LatLngTuple = [44.7685, -93.200];
+    const center: LatLngTuple = [44.7710, -93.195];
 
     return (
         <>
         <div>
             <h1>Animal List</h1>
-            <ul>
+            <ul style={{ listStyleType: 'none', paddingLeft: 0 }}>
                 {animals.map(animal => (
                     <li key={animal}>
-                        <Link to={`/animal/${encodeURIComponent(animal)}`}>{animal}</Link>
+                        <Link to={`/animal/${encodeURIComponent(animal)}`} style={{ color: 'inherit', textDecoration: 'none' }}>{animal}</Link>
                     </li>
                 ))}
             </ul>
             <MapContainer 
                 center={center} 
-                zoom={17} 
+                zoom={16.6} 
                 className={styles.mapContainer} // Use the class from the CSS module
                 style={{ height: '600px', width: '100%' }}
                 // Pass options to the map
