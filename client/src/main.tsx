@@ -4,11 +4,14 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import App from './App'; // Main app component (ensure it's a .tsx file)
 import Home from './pages/Home';
+import Animals from './pages/Animals.tsx';
 import AnimalList from './pages/AnimalList'; // Animal list component (ensure it's a .tsx file)
 import AnimalProfile from './pages/AnimalProfile'; // Animal profile component (ensure it's a .tsx file)
 import Login from './components/LoginForm';
 import Signup from './components/SignupForm';
 import About from './pages/About';
+import ReviewsPage from './pages/Reviews';
+import ProtectedRoute from './components/ProtectedRoute';
 
 
 
@@ -32,16 +35,24 @@ const router = createBrowserRouter([
         element: <AnimalProfile />,
       },
       {
-        path: '/login',
+        path: '/Login',
         element: <Login/>,
       },
       {
-        path: '/signup',
+        path: '/Signup',
         element: <Signup />
       },
       {
         path: '/About',
         element: <About />
+      },
+      {
+        path: '/Animals',
+        element: <Animals />
+      },
+      {
+        path: '/Reviews',
+        element: <ProtectedRoute element={<ReviewsPage />} />, // Protect the Reviews route
       }
     ],
   },

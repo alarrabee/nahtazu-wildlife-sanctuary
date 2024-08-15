@@ -1,3 +1,4 @@
+import React from 'react';
 import { Outlet } from 'react-router-dom';
 import {
   ApolloClient,
@@ -7,17 +8,20 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
-import './App.css'
+import { loadStripe } from '@stripe/stripe-js';
+import { Elements } from '@stripe/react-stripe-js';
+import Donate from './components/Donate';
+
+import './App.css';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+// Initialize Apollo Client
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
 
 const authLink = setContext((_, { headers }) => {
-  // get the authentication token from local storage if it exists
   const token = localStorage.getItem('id_token');
-  // return the headers to the context so httpLink can read them
   return {
     headers: {
       ...headers,
@@ -31,22 +35,29 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+// Initialize Stripe with your publishable key
+const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx'); // Replace with your actual Stripe publishable key
+
 function App() {
-  
   return (
     <>
-     <Header />
+    <Header />
     <ApolloProvider client={client}>
-    <div style={{background:'#f7f7f7', padding:'20px'}}>
-      <Outlet />
-    </div>
+      <div style={{ background: '#f7f7f7', padding: '20px' }}>
+        <Outlet />
+      </div>
+      
+      {/* Wrap the Donate component with Elements provider */}
+      <Elements stripe={stripePromise}>
+        <Donate />
+      </Elements>
+      <Footer/>
     </ApolloProvider>
-    <Footer/>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
 
 
 // import React from 'react';
