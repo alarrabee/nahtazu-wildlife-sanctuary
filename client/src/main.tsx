@@ -11,6 +11,7 @@ import Login from './components/LoginForm';
 import Signup from './components/SignupForm';
 import About from './pages/About';
 import ReviewsPage from './pages/Reviews';
+import ProtectedRoute from './components/ProtectedRoute';
 
 
 
@@ -34,11 +35,11 @@ const router = createBrowserRouter([
         element: <AnimalProfile />,
       },
       {
-        path: '/login',
+        path: '/Login',
         element: <Login/>,
       },
       {
-        path: '/signup',
+        path: '/Signup',
         element: <Signup />
       },
       {
@@ -46,13 +47,13 @@ const router = createBrowserRouter([
         element: <About />
       },
       {
-        path: '/Reviews',
-        element: <ReviewsPage />
-      },
-      {
         path: '/Animals',
         element: <Animals />
       },
+      {
+        path: '/Reviews',
+        element: <ProtectedRoute element={<ReviewsPage />} />, // Protect the Reviews route
+      }
     ],
   },
 ]);
