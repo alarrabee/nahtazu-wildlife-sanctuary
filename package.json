@@ -30,6 +30,8 @@
     "express": "^4.19.2",
     "graphql": "^16.9.0",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.5.2"
+    "mongoose": "^8.5.2",
+    "react-stripe-js": "^1.1.5",
+    "stripe": "^16.7.0"
   }
 }

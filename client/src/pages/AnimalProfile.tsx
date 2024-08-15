@@ -12,10 +12,6 @@ interface AnimalChannel {
 }
 
 const animalChannelMap: { [key: string]: AnimalChannel } = {
-  'ape': {
-    channelId: 'UCC5NfQ6Mf0dq_eEwv4P_hWA',
-    streamId: 'DHUnz4dyb54' 
-  },
   'coral': {
     channelId: 'UC-2KSeUU5SMCX6XLRD-AEvw',
     streamId: 'DHUnz4dyb54' 
@@ -27,6 +23,10 @@ const animalChannelMap: { [key: string]: AnimalChannel } = {
   'giraffe': {
     channelId: 'UCS9UBqaUtoIXUhX0J1BnxwQ',
     streamId: 'hNexlUkTTuc'
+  },
+  'gorilla': {
+    channelId: 'UC3DWrk_z1sH3ix1QNQTFr7w',
+    streamId: 'yfSyjwY6zSQ' 
   },
   'hummingbird': {
     channelId: 'UCK9WO9hqKmaAccZqCgeOw4w',

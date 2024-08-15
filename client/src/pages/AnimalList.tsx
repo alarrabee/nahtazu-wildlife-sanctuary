@@ -9,10 +9,10 @@ import styles from './AnimalList.module.css'; // Import CSS module
 
 const AnimalList = () => {
     const animals = [
-        'Ape',
         'Coral',
         'Elephant', 
         'Hummingbird',
+        'Gorilla',
         'Giraffe', 
         'Jellyfish', 
         'Lion', 
