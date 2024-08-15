@@ -45,8 +45,8 @@ const AnimalList = () => {
                 className={styles.mapContainer} // Use the class from the CSS module
                 style={{ height: '600px', width: '100%' }}
                 // Pass options to the map
-                // scrollWheelZoom={false}
-                // dragging={false}
+                scrollWheelZoom={false}
+
             >
                 <TileLayer
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
