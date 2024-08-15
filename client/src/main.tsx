@@ -10,6 +10,7 @@ import Login from './components/LoginForm';
 import Signup from './components/SignupForm';
 import About from './pages/About';
 import ReviewsPage from './pages/Reviews';
+import ProtectedRoute from './components/ProtectedRoute';
 
 
 
@@ -46,7 +47,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/Reviews',
-        element: <ReviewsPage />
+        element: <ProtectedRoute element={<ReviewsPage />} />, // Protect the Reviews route
       }
     ],
   },
