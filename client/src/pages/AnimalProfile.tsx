@@ -14,7 +14,11 @@ interface AnimalChannel {
 const animalChannelMap: { [key: string]: AnimalChannel } = {
   'ape': {
     channelId: 'UCC5NfQ6Mf0dq_eEwv4P_hWA',
-    streamId: 'F_xdJ8K0i-k' 
+    streamId: 'DHUnz4dyb54' 
+  },
+  'coral': {
+    channelId: 'UC-2KSeUU5SMCX6XLRD-AEvw',
+    streamId: 'DHUnz4dyb54' 
   },
   'elephant': {
     channelId: 'UC3DWrk_z1sH3ix1QNQTFr7w',
@@ -23,6 +27,10 @@ const animalChannelMap: { [key: string]: AnimalChannel } = {
   'giraffe': {
     channelId: 'UCS9UBqaUtoIXUhX0J1BnxwQ',
     streamId: 'hNexlUkTTuc'
+  },
+  'hummingbird': {
+    channelId: 'UCK9WO9hqKmaAccZqCgeOw4w',
+    streamId: 'pXe8MpU7uzk' 
   },
   'jellyfish': {
     channelId: 'UCnM5iMGiKsZg-iOlIO2ZkdQ',
@@ -36,25 +44,21 @@ const animalChannelMap: { [key: string]: AnimalChannel } = {
     channelId: 'UC-2KSeUU5SMCX6XLRD-AEvw',
     streamId: 'yPSYdCWRWFA'
   },
-  'panda bear': {
-    channelId: 'UC2Sk0aXLq3ADkH_USGPKT_Q',
-    streamId: '3szkFHfr6sA'
+  'owl': {
+    channelId: 'UCzbydNAcB7jeJGssRFb_dCA',
+    streamId: '6f-D2AjeEi0'
   },
   'penguin': {
     channelId: 'UC8NnosPOvXnm0O1u5YnLQiw',
     streamId: 'eXfpXKP6qVE'
   },
-  'polar bear': {
-    channelId: 'UCC5NfQ6Mf0dq_eEwv4P_hWA', 
-    streamId: 'CpsQzkGobTA' 
-  },
   'red panda': {
     channelId: 'UCQv8IYkfj8RAPDHGHivaQIA',
     streamId: 'e3EP1XCH0KQ'
   },
-  'sea otter': {
-    channelId: 'UCbzl-qtfTKY9QNgtnqmuyBw',
-    streamId: 'Wq0x7Vw3DGw'
+  'shark': {
+    channelId: 'UCSyg9cb3Iq-NtlbxqNB9wGw',
+    streamId: 'BLvr4K2eiRE'
   },
   'sloth': {
     channelId: 'UC-2KSeUU5SMCX6XLRD-AEvw',
@@ -63,6 +67,10 @@ const animalChannelMap: { [key: string]: AnimalChannel } = {
   'tiger': {
     channelId: 'UCC5NfQ6Mf0dq_eEwv4P_hWA',
     streamId: 'iJBgkQbSZS4' 
+  },
+  'wolf': {
+    channelId: 'UC-2KSeUU5SMCX6XLRD-AEvw',
+    streamId: '5e4lsEe4Vew' 
   },
 };
 
