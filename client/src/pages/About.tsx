@@ -1,9 +1,9 @@
 import React from 'react';
-import {Divider} from 'antd'
+import {Divider, Card, Flex, Typography} from 'antd'
 
 
 const Home: React.FC =()=>(
-      <body>
+      <section>
     <p>
       Welcome to Nahtazu... while our name might make you think different when you hear it we are in-fact a zoo! Although only a virtual one if you have time please take a moment to read below about us and our work.
     </p>
@@ -38,7 +38,7 @@ const Home: React.FC =()=>(
     Warm regards,
     Nahtazu Team
     </p>
-      </body>
+      </section>
   );
 
   export default Home;
