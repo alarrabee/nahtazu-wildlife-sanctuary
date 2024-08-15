@@ -9,6 +9,7 @@ import AnimalProfile from './pages/AnimalProfile'; // Animal profile component (
 import Login from './components/LoginForm';
 import Signup from './components/SignupForm';
 import About from './pages/About';
+import ReviewsPage from './pages/Reviews';
 
 
 
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
       {
         path: '/About',
         element: <About />
+      },
+      {
+        path: '/Reviews',
+        element: <ReviewsPage />
       }
     ],
   },
