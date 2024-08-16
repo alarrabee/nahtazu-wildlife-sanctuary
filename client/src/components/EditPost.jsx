@@ -18,7 +18,8 @@ const EditPost = ({ postId, initialText }) => {
           input: { _id: postId, postText },
         },
       });
-      alert('Post updated successfully!');
+      // alert('Post updated successfully!');
+      window.location.reload()
     } catch (err) {
       console.error(err);
       alert('Error updating post.');
