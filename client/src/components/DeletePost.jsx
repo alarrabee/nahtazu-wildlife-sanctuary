@@ -14,7 +14,8 @@ const DeletePost = ({ postId }) => {
       await deletePost({
         variables: { _id: postId },
       });
-      alert('Post deleted successfully!');
+      // alert('Post deleted successfully!');
+      window.location.reload()
     } catch (err) {
       console.error(err);
       alert('Error deleting post.');
