@@ -4,6 +4,10 @@ import AuthService from '../../utils/auth';
 import { Button, Col, Row } from 'antd';
 import logo from '../../assets/logo.png'
 
+const header = {
+    margin: '10px'
+};
+
 const headerStyle ={
     width : '100%',
     height: 'auto',
@@ -46,7 +50,7 @@ const Header = () => {
     };
 
     return (
-        <div className="header">
+        <div className="header" style={header}>
             <nav>       
                 <Row 
                     style ={headerStyle}justify={'space-between'} align ={"middle"} gutter={[16, 16]} >
