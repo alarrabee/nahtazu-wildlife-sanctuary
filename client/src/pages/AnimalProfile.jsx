@@ -1,16 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-// interface PageData {
-//   title: string;
-//   extract: string;
-// }
-
-// interface AnimalChannel {
-//   channelId: string;
-//   streamId: string;
-// }
-
 const animalChannelMap = {
   'ape': {
     channelId: 'UCC5NfQ6Mf0dq_eEwv4P_hWA',
@@ -74,13 +64,12 @@ const animalChannelMap = {
   },
 };
 
-
 const AnimalProfile = () => {
   const { name } = useParams();
-  const [data, setData] = useState<PageData | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
-  const [animalChannel, setAnimalChannel] = useState<AnimalChannel | null>(null);
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [animalChannel, setAnimalChannel] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -97,7 +86,7 @@ const AnimalProfile = () => {
           extract: pageData.extract,
         });
       } catch (err) {
-        setError(err);
+        setError(err.message || 'An error occurred');
       } finally {
         setLoading(false);
       }
@@ -107,7 +96,6 @@ const AnimalProfile = () => {
 
     // Set the correct animal channel data based on the name
     setAnimalChannel(animalChannelMap[name?.toLowerCase() || '']);
-
   }, [name]);
 
   if (loading) return <p>Loading...</p>;
