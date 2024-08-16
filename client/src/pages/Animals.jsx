@@ -5,22 +5,24 @@ import { Card } from 'antd';
 
 const { Meta } = Card;
 
-const Animals: React.FC = () => {
-  const [animalImages, setAnimalImages] = useState<{ [key: string]: string }>({});
+const Animals = () => {
+  const [animalImages, setAnimalImages] = useState({});
   const animals = [
-    'Ape', 
+    'Ape',
+    'Coral',
     'Elephant', 
+    'Hummingbird',
     'Giraffe', 
     'Jellyfish', 
     'Lion', 
     'Manatee', 
-    'Panda Bear', 
+    'Owl', 
     'Penguin', 
-    'Polar Bear', 
     'Red Panda', 
-    'Sea Otter', 
+    'Shark', 
     'Sloth', 
-    'Tiger'
+    'Tiger',
+    'Wolf'
   ];
 
   useEffect(() => {

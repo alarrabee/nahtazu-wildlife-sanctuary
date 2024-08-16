@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-interface PageData {
-  title: string;
-  extract: string;
-}
+// interface PageData {
+//   title: string;
+//   extract: string;
+// }
 
-interface AnimalChannel {
-  channelId: string;
-  streamId: string;
-}
+// interface AnimalChannel {
+//   channelId: string;
+//   streamId: string;
+// }
 
-const animalChannelMap: { [key: string]: AnimalChannel } = {
+const animalChannelMap = {
   'ape': {
     channelId: 'UCC5NfQ6Mf0dq_eEwv4P_hWA',
     streamId: 'DHUnz4dyb54' 
@@ -75,8 +75,8 @@ const animalChannelMap: { [key: string]: AnimalChannel } = {
 };
 
 
-const AnimalProfile: React.FC = () => {
-  const { name } = useParams<{ name: string }>();
+const AnimalProfile = () => {
+  const { name } = useParams();
   const [data, setData] = useState<PageData | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -97,7 +97,7 @@ const AnimalProfile: React.FC = () => {
           extract: pageData.extract,
         });
       } catch (err) {
-        setError((err as Error).message);
+        setError(err);
       } finally {
         setLoading(false);
       }

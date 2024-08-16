@@ -5,7 +5,7 @@ import { Button, Col, Row } from 'antd';
 import logo from '../../assets/logo.png'
 
 
-const footerStyle: React.CSSProperties ={
+const footerStyle ={
     fontFamily: "Georgia",
     width : '100%',
     height: 250,
@@ -13,35 +13,35 @@ const footerStyle: React.CSSProperties ={
     border: '1px solid black',
 };
 
-const animalButtonStyle: React.CSSProperties = {
+const animalButtonStyle = {
     width: '150px',
     backgroundColor: '#2196F3', // Blue
     color: '#fff',
     padding:"15px"
   };
   
-  const aboutButtonStyle: React.CSSProperties = {
+  const aboutButtonStyle = {
     width: '150px',
     backgroundColor: '#FF9800', // Orange
     color: '#fff',
     padding:"15px"
   };
   
-  const loginButtonStyle: React.CSSProperties = {
+  const loginButtonStyle = {
     width: '150px',
     backgroundColor: '#9C27B0', // Purple
     color: '#fff',
     padding:"15px"
   };
   
-  const signUpButtonStyle: React.CSSProperties = {
+  const signUpButtonStyle = {
     width: '150px',
     backgroundColor: '#4CAF50', // Green
     color: '#fff',
     padding:"15px"
   };
 
-  const reviewButtonStyle: React.CSSProperties = {
+  const reviewButtonStyle = {
     width: '150px',
     backgroundColor: 'red', // Red
     color: '#fff',

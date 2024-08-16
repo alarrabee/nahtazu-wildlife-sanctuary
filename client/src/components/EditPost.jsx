@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { UPDATE_POST } from '../utils/mutations';
 
-interface EditPostProps {
-  postId: string;
-  initialText: string;
-}
+// interface EditPostProps {
+//   postId: string;
+//   initialText: string;
+// }
 
-const EditPost: React.FC<EditPostProps> = ({ postId, initialText }) => {
+const EditPost = ({ postId, initialText }) => {
   const [postText, setPostText] = useState(initialText);
   const [updatePost, { data, loading, error }] = useMutation(UPDATE_POST);
 

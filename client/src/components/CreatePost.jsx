@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { CREATE_POST } from '../utils/mutations';
 
-const CreatePost: React.FC = () => {
+const CreatePost = () => {
   const [postText, setPostText] = useState('');
   const [createPost, { data, loading, error }] = useMutation(CREATE_POST);
 

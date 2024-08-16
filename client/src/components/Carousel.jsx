@@ -1,7 +1,7 @@
 import React from 'react';
 import { Carousel } from 'antd';
 
-const contentStyle: React.CSSProperties = {
+const contentStyle = {
   margin: 0,
   height: '900px',
   width: '100%',
@@ -11,12 +11,12 @@ const contentStyle: React.CSSProperties = {
   background: 'white',
   padding: "1%"
 };
-const imageStyle: React.CSSProperties ={
+const imageStyle ={
   width: '98%',
 }
 
-const CarouselPic: React.FC = () => {
-  const onChange = (currentSlide: number) => {
+const CarouselPic = () => {
+  const onChange = (currentSlide) => {
     console.log(currentSlide);
   };
 

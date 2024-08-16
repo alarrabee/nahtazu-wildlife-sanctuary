@@ -1,25 +1,25 @@
-import { Link } from 'react-router-dom';
+
 import React from 'react'
 import {Divider} from 'antd'
 import AnimalList from './AnimalList';
 import CarouselPic from '../components/Carousel'
 
-const homeStyle: React.CSSProperties ={
+const homeStyle ={
     fontFamily: "sans-serif",
     //border: "1px solid black",
     fontWeight: "bold",
     fontSize: "20px"
 
  };
- const mainTitles: React.CSSProperties ={
+ const mainTitles ={
     fontSize: "120px"
 
  };
- const subTitles: React.CSSProperties ={
+ const subTitles ={
     fontSize: "80px"
 
  };
- const descStyle: React.CSSProperties ={
+ const descStyle ={
     fontWeight: "bold",
     fontSize: "30px"
 
