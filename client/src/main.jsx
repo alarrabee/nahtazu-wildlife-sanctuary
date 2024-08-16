@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import App from './App.jsx'; // Main app component (ensure it's a .tsx file)
-import Home from './pages/home.jsx';
+import Home from './pages/home1.jsx';
 import Animals from './pages/Animals.jsx';
 import AnimalList from './pages/AnimalList'; // Animal list component (ensure it's a .tsx file)
 import AnimalProfile from './pages/AnimalProfile.jsx'; // Animal profile component (ensure it's a .tsx file)
