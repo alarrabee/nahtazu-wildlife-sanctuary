@@ -1,8 +1,12 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Jura:wght@300..700&display=swap');
+
 #root {
   margin: 0 auto;
- 
-  
+  font-family: "Jura", sans-serif;
+  font-weight: 900;
   text-align: center;
+  font-size: '50px';
 }
 
 .logo {
@@ -17,6 +21,18 @@
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
+.titles{
+  font-family: "Bungee Inline";
+}
+.normText {
+  font-family: 'Jura';
+  font-weight: 900;
+}
+
+Button{
+  font-family: 'Bungee Inline';
+}
+
 
 @keyframes logo-spin {
   from {
