@@ -4,22 +4,22 @@ import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 const DonationForm = () => {
   const [selectedAmount, setSelectedAmount] = useState(0);
   const [customAmount, setCustomAmount] = useState('');
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState(null);
   const [succeeded, setSucceeded] = useState(false);
   const stripe = useStripe();
   const elements = useElements();
 
-  const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleAmountChange = (e) => {
     setSelectedAmount(parseInt(e.target.value));
     setCustomAmount(''); // Clear custom amount if a predefined amount is selected
   };
 
-  const handleCustomAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleCustomAmountChange = (e) => {
     setCustomAmount(e.target.value);
     setSelectedAmount(0); // Clear selected amount if a custom amount is entered
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);
     setSucceeded(false);
@@ -48,9 +48,9 @@ const DonationForm = () => {
       }
 
       // Confirm the payment with the client secret
-      const result = await stripe!.confirmCardPayment(data.clientSecret, {
+      const result = await stripe.confirmCardPayment(data.clientSecret, {
         payment_method: {
-          card: elements!.getElement(CardElement)!,
+          card: elements.getElement(CardElement),
         },
       });
 

@@ -1,7 +1,7 @@
 //fix routes 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useQuery } from '@apollo/client';
-import { GET_ANIMAL } from '../queries';
+import { GET_ANIMAL } from '../utils/queries.js';
 
 const Animal = () => {
   const [name, setName] = useState('');

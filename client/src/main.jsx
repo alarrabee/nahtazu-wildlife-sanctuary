@@ -2,16 +2,16 @@
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import App from './App'; // Main app component (ensure it's a .tsx file)
-import Home from './pages/Home';
-import Animals from './pages/Animals.tsx';
+import App from './App.jsx'; // Main app component (ensure it's a .tsx file)
+import Home from './pages/home.jsx';
+import Animals from './pages/Animals.jsx';
 import AnimalList from './pages/AnimalList'; // Animal list component (ensure it's a .tsx file)
-import AnimalProfile from './pages/AnimalProfile'; // Animal profile component (ensure it's a .tsx file)
-import Login from './components/LoginForm';
-import Signup from './components/SignupForm';
-import About from './pages/About';
+import AnimalProfile from './pages/AnimalProfile.jsx'; // Animal profile component (ensure it's a .tsx file)
+import Login from './components/LoginForm.jsx';
+import Signup from './components/SignupForm.jsx';
+import About from './pages/About.jsx';
 import ReviewsPage from './pages/Reviews';
-import ProtectedRoute from './components/ProtectedRoute';
+import ProtectedRoute from './components/ProtectedRoute.jsx';
 
 
 
@@ -58,7 +58,7 @@ const router = createBrowserRouter([
   },
 ]);
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <RouterProvider router={router} />
 );
 

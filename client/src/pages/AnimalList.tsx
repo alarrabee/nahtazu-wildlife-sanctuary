@@ -43,98 +43,114 @@ const AnimalList = () => {
                 <TileLayer
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
+                <MapContainer>
                 <Marker position={center}>
-                <Popup>
-                    <a href="/animal/ape" style={{ textDecoration: 'none', color: 'black' }}>
-                    Ape Exhibit
+                    <Popup>
+                    <a href="/animal/gorilla" style={{ textDecoration: 'none', color: 'black' }}>
+                        Gorilla Exhibit
                     </a>
-                </Popup>
+                    </Popup>
                 </Marker>
                 <Marker position={[44.7686, -93.198]}>
-                <Popup>
+                    <Popup>
                     <a href="/animal/elephant" style={{ textDecoration: 'none', color: 'black' }}>
-                    Elephant Exhibit
+                        Elephant Exhibit
                     </a>
-                </Popup>
+                    </Popup>
                 </Marker>
                 <Marker position={[44.7690, -93.195]}>
-                <Popup>
+                    <Popup>
                     <a href="/animal/giraffe" style={{ textDecoration: 'none', color: 'black' }}>
-                    Giraffe Exhibit
+                        Giraffe Exhibit
                     </a>
-                </Popup>
+                    </Popup>
                 </Marker>
                 <Marker position={[44.7720, -93.200]}>
-                <Popup>
+                    <Popup>
                     <a href="/animal/jellyfish" style={{ textDecoration: 'none', color: 'black' }}>
-                    Jellyfish Exhibit
+                        Jellyfish Exhibit
                     </a>
-                </Popup>
+                    </Popup>
                 </Marker>
                 <Marker position={[44.7740, -93.192]}>
-                <Popup>
+                    <Popup>
                     <a href="/animal/lion" style={{ textDecoration: 'none', color: 'black' }}>
-                    Lion Exhibit
+                        Lion Exhibit
                     </a>
-                </Popup>
+                    </Popup>
                 </Marker>
                 <Marker position={[44.7710, -93.195]}>
-                <Popup>
+                    <Popup>
                     <a href="/animal/manatee" style={{ textDecoration: 'none', color: 'black' }}>
-                    Manatee Exhibit
+                        Manatee Exhibit
                     </a>
-                </Popup>
+                    </Popup>
                 </Marker>
                 <Marker position={[44.7713, -93.193]}>
-                <Popup>
-                    <a href="/animal/panda-bear" style={{ textDecoration: 'none', color: 'black' }}>
-                    Panda Bear Exhibit
+                    <Popup>
+                    <a href="/animal/red-panda" style={{ textDecoration: 'none', color: 'black' }}>
+                        Red Panda Exhibit
                     </a>
-                </Popup>
+                    </Popup>
                 </Marker>
                 <Marker position={[44.7714, -93.194]}>
-                <Popup>
+                    <Popup>
                     <a href="/animal/penguin" style={{ textDecoration: 'none', color: 'black' }}>
-                    Penguin Exhibit
+                        Penguin Exhibit
                     </a>
-                </Popup>
+                    </Popup>
                 </Marker>
                 <Marker position={[44.7715, -93.190]}>
-                <Popup>
-                    <a href="/animal/polar-bear" style={{ textDecoration: 'none', color: 'black' }}>
-                    Polar Bear Exhibit
+                    <Popup>
+                    <a href="/animal/coral" style={{ textDecoration: 'none', color: 'black' }}>
+                        Coral Exhibit
                     </a>
-                </Popup>
+                    </Popup>
                 </Marker>
                 <Marker position={[44.7716, -93.189]}>
-                <Popup>
-                    <a href="/animal/red-panda" style={{ textDecoration: 'none', color: 'black' }}>
-                    Red Panda Exhibit
+                    <Popup>
+                    <a href="/animal/hummingbird" style={{ textDecoration: 'none', color: 'black' }}>
+                        Hummingbird Exhibit
                     </a>
-                </Popup>
+                    </Popup>
                 </Marker>
                 <Marker position={[44.7712, -93.191]}>
-                <Popup>
-                    <a href="/animal/sea-otter" style={{ textDecoration: 'none', color: 'black' }}>
-                    Sea Otter Exhibit
+                    <Popup>
+                    <a href="/animal/shark" style={{ textDecoration: 'none', color: 'black' }}>
+                        Shark Exhibit
                     </a>
-                </Popup>
+                    </Popup>
+                </Marker>
+                <Marker position={[44.7745, -93.197]}>
+                    <Popup>
+                    <a href="/animal/owl" style={{ textDecoration: 'none', color: 'black' }}>
+                        Owl Exhibit
+                    </a>
+                    </Popup>
+                </Marker>
+                <Marker position={[44.7750, -93.193]}>
+                    <Popup>
+                    <a href="/animal/wolf" style={{ textDecoration: 'none', color: 'black' }}>
+                        Wolf Exhibit
+                    </a>
+                    </Popup>
                 </Marker>
                 <Marker position={[44.7717, -93.193]}>
-                <Popup>
+                    <Popup>
                     <a href="/animal/sloth" style={{ textDecoration: 'none', color: 'black' }}>
-                    Sloth Exhibit
+                        Sloth Exhibit
                     </a>
-                </Popup>
+                    </Popup>
                 </Marker>
                 <Marker position={[44.7719, -93.195]}>
-                <Popup>
+                    <Popup>
                     <a href="/animal/tiger" style={{ textDecoration: 'none', color: 'black' }}>
-                    Tiger Exhibit
+                        Tiger Exhibit
                     </a>
-                </Popup>
+                    </Popup>
                 </Marker>
-            </MapContainer>
+                </MapContainer>
+
 
         </div>
         </>
@@ -156,3 +172,4 @@ export default AnimalList;
                         <Link to={`/animal/${encodeURIComponent(animal)}`} style={{ color: 'inherit', textDecoration: 'none' }}>{animal}</Link>
                     </li>
                 ))} */}
+

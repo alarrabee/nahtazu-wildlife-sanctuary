@@ -4,34 +4,34 @@ import AuthService from '../../utils/auth';
 import { Button, Col, Row } from 'antd';
 import logo from '../../assets/logo.png'
 
-const headerStyle: React.CSSProperties ={
+const headerStyle ={
     width : '100%',
     height: 170,
     borderRadius: 6, 
     border: '1px solid black',
 };
-const animalButtonStyle: React.CSSProperties = {
+const animalButtonStyle = {
     width: '200px',
     backgroundColor: '#2196F3', // Blue
     color: '#fff',
     padding:"15px"
   };
   
-  const aboutButtonStyle: React.CSSProperties = {
+  const aboutButtonStyle = {
     width: '200px',
     backgroundColor: '#FF9800', // Orange
     color: '#fff',
     padding:"15px"
   };
   
-  const loginButtonStyle: React.CSSProperties = {
+  const loginButtonStyle = {
     width: '200px',
     backgroundColor: '#9C27B0', // Purple
     color: '#fff',
     padding:"15px"
   };
   
-  const signUpButtonStyle: React.CSSProperties = {
+  const signUpButtonStyle = {
     width: '200px',
     backgroundColor: '#4CAF50', // Green
     color: '#fff',
