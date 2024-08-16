@@ -31,14 +31,6 @@ const AnimalList = () => {
     return (
         <>
         <div>
-            <h1>Animal List</h1>
-            <ul style={{ listStyleType: 'none', paddingLeft: 0 }}>
-                {animals.map(animal => (
-                    <li key={animal}>
-                        <Link to={`/animal/${encodeURIComponent(animal)}`} style={{ color: 'inherit', textDecoration: 'none' }}>{animal}</Link>
-                    </li>
-                ))}
-            </ul>
             <MapContainer 
                 center={center} 
                 zoom={16.6} 
@@ -157,4 +149,10 @@ export default AnimalList;
 
 
 
-
+{/* <h1>Animal List</h1>
+            <ul style={{ listStyleType: 'none', paddingLeft: 0 }}>
+                {animals.map(animal => (
+                    <li key={animal}>
+                        <Link to={`/animal/${encodeURIComponent(animal)}`} style={{ color: 'inherit', textDecoration: 'none' }}>{animal}</Link>
+                    </li>
+                ))} */}
