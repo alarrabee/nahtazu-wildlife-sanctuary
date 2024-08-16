@@ -1,5 +1,5 @@
 // client/src/pages/ReviewsPage.js
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useQuery } from '@apollo/client';
 import CreatePost from '../components/CreatePost';
 import EditPost from '../components/EditPost';

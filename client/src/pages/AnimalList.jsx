@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
+
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import { LatLngTuple } from 'leaflet';
+// import { LatLngTuple } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
 import styles from './AnimalList.module.css'; // Import CSS module
@@ -26,7 +26,7 @@ const AnimalList = () => {
         'Wolf'
       ];
       
-    const center: LatLngTuple = [44.7710, -93.195];
+    const center = [44.7710, -93.195];
 
     return (
         <>

@@ -2,11 +2,11 @@ import React from 'react';
 import { useMutation } from '@apollo/client';
 import { DELETE_POST } from '../utils/mutations';
 
-interface DeletePostProps {
-  postId: string;
-}
+// interface DeletePostProps {
+//   postId: string;
+// }
 
-const DeletePost: React.FC<DeletePostProps> = ({ postId }) => {
+const DeletePost = ({ postId }) => {
   const [deletePost, { data, loading, error }] = useMutation(DELETE_POST);
 
   const handleDelete = async () => {

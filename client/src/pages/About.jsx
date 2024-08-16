@@ -1,15 +1,15 @@
 import React from 'react';
-import {Divider, Row, Col, Card, Flex, Typography} from 'antd'
+import {Divider, Row, Col} from 'antd'
 
 
 
- const subTitles: React.CSSProperties ={
+ const subTitles = {
     fontSize: "50px"
  };
- const profTitles: React.CSSProperties ={
+ const profTitles ={
   fontSize: "40px"
 };
-const Home: React.FC =()=>(
+const Home =()=>(
       <section>
     <p class = 'normText' style= {{fontSize:'25px'}}>
       Welcome to Nahtazu... while our name might make you think different when you hear it we are in-fact a zoo! Although only a virtual one if you have time please take a moment to read below about us and our work.
