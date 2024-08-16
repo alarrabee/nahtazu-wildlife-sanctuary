@@ -3,13 +3,11 @@ const User = require('../models/User');
 const Post = require('../models/Post');
 const userSeeds = require('./userSeeds.json');
 const postSeeds = require('./postSeeds.json');
+require('dotenv').config();
 
 
 
-mongoose.connect('mongodb://localhost:27017/nahtazu', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/nahtazu');
 
 const seedDatabase = async () => {
   try {
