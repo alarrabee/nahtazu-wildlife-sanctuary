@@ -31,17 +31,18 @@ const DonationForm = () => {
     }
 
     try {
+      // Determine the correct backend URL: use .env value, or default to localhost
+      const baseUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3001';
+      const apiUrl = `${baseUrl}/create-payment-intent`;
+
       // Fetch the client secret from the backend
-      const response = await fetch('http://localhost:3001/create-payment-intent', {
+      const response = await fetch(apiUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ amount: finalAmount }),
       });
 
       const data = await response.json();
-
-      // Log the data to ensure we're getting the clientSecret
-      console.log('Response from backend:', data);
 
       if (!data.clientSecret) {
         throw new Error('Missing clientSecret in response');

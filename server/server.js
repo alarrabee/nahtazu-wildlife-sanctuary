@@ -21,7 +21,11 @@ const startApolloServer = async () => {
   await server.start();
 
   // Middleware
-  app.use(cors());
+  app.use(cors({
+    origin: ['http://localhost:3000', 'https://nahtazu-test.onrender.com'], // Allow both local development and production frontend
+    credentials: true,
+  }));
+  
   app.use(express.urlencoded({ extended: false }));
   app.use(express.json());
 
