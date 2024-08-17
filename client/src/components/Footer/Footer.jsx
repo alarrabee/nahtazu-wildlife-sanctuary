@@ -4,13 +4,16 @@ import AuthService from '../../utils/auth';
 import { Button, Col, Row } from 'antd';
 import logo from '../../assets/logo.png'
 
+const footer = {
+    margin: '10px'
+};
 
 const footerStyle ={
-    fontFamily: "Georgia",
     width : '100%',
-    height: 250,
+    height: 'auto',
     borderRadius: 6, 
     border: '1px solid black',
+    paddingRight: '50px'
 };
 
 const animalButtonStyle = {
@@ -42,11 +45,13 @@ const animalButtonStyle = {
   };
 
   const reviewButtonStyle = {
-    width: '150px',
-    backgroundColor: 'red', // Red
+    width: '100%', // Full width in smaller screens
     color: '#fff',
-    padding:"15px"
+    padding: '15px',
+    // marginBottom: '10px', // Spacing between buttons when stacked
+    backgroundColor: '#FF0000', // Red
   };
+
 
   const Footer = () => {
     const isLoggedIn = AuthService.loggedIn(); // Check if user is logged in
@@ -54,13 +59,16 @@ const animalButtonStyle = {
         AuthService.logout();
     };
     return(
-    <footer style ={footerStyle}>
-    <Row style ={footerStyle}justify={'space-between'} align ={"middle"} >  
-                    <Col span ={4}><Link to = "/"><img className = "logo" width ={160} src={logo} alt="Zoo logo"/></Link></Col>
-                    <p className = "normText"> 
+    <footer style ={footer}>
+    <Row style ={footerStyle} justify={'space-between'} align ={"middle"} >  
+                    <Col xs={24} md={4}><Link to = "/"><img className = "logo" width ={160} src={logo} alt="Zoo logo"/></Link></Col>
+                    <Col xs={24} md={4}><p className = "normText"> 
                         Nahtazu Zoo
                         123 Safari Lane
-                        Greenwood, MN 55210</p>
+                        Greenwood, MN 55210</p></Col>
+                        <Col xs={24} md={8}><p className = "normText"> 
+                        CUSTOMER SERVICE: 651-487-8200</p></Col>
+                    
                     <p className = "normText">CUSTOMER SERVICE: 651-487-8200 </p>
                     <Col span ={2}><Link  to = "/Animals"><Button style={animalButtonStyle}> Animals </Button></Link></Col>
                     <Col span ={2}><Link to ="/About"><Button  style={aboutButtonStyle}> About Us </Button></Link></Col>
@@ -72,8 +80,8 @@ const animalButtonStyle = {
                     )}
                     {!isLoggedIn && (
                         <Col span={2}><Link to="/SignUp"><Button style={signUpButtonStyle}>Sign Up</Button></Link></Col>
-                    )}
-                        <Col span={2}><Link to ="/Reviews"><Button style ={reviewButtonStyle}>Review</Button></Link></Col>
+                    )} 
+                        <Col xs={24} md={4}><Link to ="/Reviews"><Button style ={reviewButtonStyle}>Reviews</Button></Link></Col>
                 </Row> 
         </footer>
     );
