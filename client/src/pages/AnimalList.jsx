@@ -154,7 +154,12 @@ import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png';
 import markerIcon from 'leaflet/dist/images/marker-icon.png';
 import markerShadow from 'leaflet/dist/images/marker-shadow.png';
 
-import styles from './AnimalList.module.css'; // Import CSS module
+const mapStyle = {
+    height: '550px',
+    width: '70%',
+    textAlign: 'center',
+    display: 'inline-block'
+}
 
 let DefaultIcon = L.icon({
     iconUrl: markerIcon,
@@ -183,17 +188,15 @@ const AnimalList = () => {
     const center = [44.7710, -93.195];
 
     return (
-        <div>
-            <MapContainer 
-                center={center} 
-                zoom={16.6} 
-                className={styles.mapContainer} 
-                style={{ height: '600px', width: '100%' }}
-                scrollWheelZoom={false}
-            >
-                <TileLayer
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                />
+        <MapContainer 
+            center={center} 
+            zoom={16.6} 
+            style ={mapStyle}
+            scrollWheelZoom={false}>
+
+            <div>
+                <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
+                
                 <MarkerWithPopup position={[44.7710, -93.199]} link="/animal/Gorilla" name="Gorilla" />
                 <MarkerWithPopup position={[44.7686, -93.198]} link="/animal/Elephant" name="Elephant" />
                 <MarkerWithPopup position={[44.7690, -93.195]} link="/animal/Giraffe" name="Giraffe" />
@@ -209,8 +212,9 @@ const AnimalList = () => {
                 <MarkerWithPopup position={[44.7712, -93.191]} link="/animal/Shark" name="Shark" />
                 <MarkerWithPopup position={[44.7745, -93.197]} link="/animal/Owl" name="Owl" />
                 <MarkerWithPopup position={[44.7750, -93.193]} link="/animal/Wolf" name="Wolf" />
-                </MapContainer>
-        </div>
+            </div>
+            
+        </MapContainer>
     );
 };
 
