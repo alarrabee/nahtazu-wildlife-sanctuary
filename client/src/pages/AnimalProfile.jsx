@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 const animalChannelMap = {
-  'ape': {
-    channelId: 'UCC5NfQ6Mf0dq_eEwv4P_hWA',
-    streamId: 'DHUnz4dyb54' 
+  'gorilla': {
+    channelId: 'UC3DWrk_z1sH3ix1QNQTFr7w',
+    streamId: 'yfSyjwY6zSQ' 
   },
   'coral': {
     channelId: 'UC-2KSeUU5SMCX6XLRD-AEvw',

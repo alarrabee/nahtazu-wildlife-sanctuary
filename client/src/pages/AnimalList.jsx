@@ -1,6 +1,6 @@
 
 // import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-// // import { LatLngTuple } from 'leaflet';
+ // import { LatLngTuple } from 'leaflet';
 // import 'leaflet/dist/leaflet.css';
 
 // import styles from './AnimalList.module.css'; // Import CSS module
@@ -25,7 +25,7 @@
 //         'Tiger',
 //         'Wolf'
 //       ];
-      
+
 //     const center = [44.7710, -93.195];
 
 //     return (
@@ -194,7 +194,7 @@ const AnimalList = () => {
                 <TileLayer
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-                <MarkerWithPopup position={[44.7710, -93.195]} link="/animal/Ape" name="Ape" />
+                <MarkerWithPopup position={[44.7710, -93.199]} link="/animal/Gorilla" name="Gorilla" />
                 <MarkerWithPopup position={[44.7686, -93.198]} link="/animal/Elephant" name="Elephant" />
                 <MarkerWithPopup position={[44.7690, -93.195]} link="/animal/Giraffe" name="Giraffe" />
                 <MarkerWithPopup position={[44.7720, -93.200]} link="/animal/Jellyfish" name="Jellyfish" />
@@ -202,12 +202,14 @@ const AnimalList = () => {
                 <MarkerWithPopup position={[44.7710, -93.195]} link="/animal/Manatee" name="Manatee" />
                 <MarkerWithPopup position={[44.7713, -93.193]} link="/animal/Red Panda" name="Red Panda" />
                 <MarkerWithPopup position={[44.7714, -93.194]} link="/animal/Penguin" name="Penguin" />
-                <MarkerWithPopup position={[44.7715, -93.190]} link="/animal/Polar Bear" name="Polar Bear" />
-                <MarkerWithPopup position={[44.7716, -93.189]} link="/animal/Panda Bear" name="Panda Bear" />
-                <MarkerWithPopup position={[44.7712, -93.191]} link="/animal/Sea Otter" name="Sea Otter" />
                 <MarkerWithPopup position={[44.7717, -93.193]} link="/animal/Sloth" name="Sloth" />
                 <MarkerWithPopup position={[44.7719, -93.195]} link="/animal/Tiger" name="Tiger" />
-            </MapContainer>
+                <MarkerWithPopup position={[44.7715, -93.190]} link="/animal/Coral" name="Coral" />
+                <MarkerWithPopup position={[44.7716, -93.189]} link="/animal/Hummingbird" name="Hummingbird" />
+                <MarkerWithPopup position={[44.7712, -93.191]} link="/animal/Shark" name="Shark" />
+                <MarkerWithPopup position={[44.7745, -93.197]} link="/animal/Owl" name="Owl" />
+                <MarkerWithPopup position={[44.7750, -93.193]} link="/animal/Wolf" name="Wolf" />
+                </MapContainer>
         </div>
     );
 };
