@@ -8,7 +8,7 @@ const { Meta } = Card;
 const Animals = () => {
   const [animalImages, setAnimalImages] = useState({});
   const animals = [
-    'Ape',
+    'Gorilla',
     'Coral',
     'Elephant', 
     'Hummingbird',
