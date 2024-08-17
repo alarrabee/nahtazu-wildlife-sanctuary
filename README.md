@@ -6,6 +6,7 @@ Welcome to the Nahtazu Wildlife Sanctuary! This web application provides an inte
 ## Table of Contents
 - [Features](#features)
 - [Technology Stack](#technology-stack)
+- [Deployed Application](#deployed-application)
 - [Installation Instructions](#installation-instructions)
 - [Project Structure](#project-structure)
 - [Streaming Integration Details](#streaming-integration-details)
@@ -32,6 +33,9 @@ Streaming Service: YouTube (integrated via StreamWeasles)
 Payment Processing: Stripe
 Mapping Service: Leaflet.js
 UI Library: Ant Design
+
+## Deployed Application
+[Nahtazu Wildlife Sanctuary](https://nahtazu-wildlife-sanctuary.onrender.com)
 
 ## Installation Instructions
 Follow these steps to set up the application locally:
