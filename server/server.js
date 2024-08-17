@@ -22,7 +22,7 @@ const startApolloServer = async () => {
 
   // Middleware
   app.use(cors({
-    origin: ['http://localhost:3000', 'https://nahtazu-test.onrender.com'], // Allow both local development and production frontend
+    origin: ['http://localhost:3000', 'https://nahtazu-test.onrender.com','https://nahtazu-wildlife-sanctuary.onrender.com'], 
     credentials: true,
   }));
   
