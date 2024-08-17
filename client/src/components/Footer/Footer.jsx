@@ -54,10 +54,10 @@ const animalButtonStyle = {
 
 
   const Footer = () => {
-    // const isLoggedIn = AuthService.loggedIn(); // Check if user is logged in
-    // const handleLogout = () => {
-    //     AuthService.logout();
-    // };
+    const isLoggedIn = AuthService.loggedIn(); // Check if user is logged in
+    const handleLogout = () => {
+        AuthService.logout();
+    };
     return(
     <footer style ={footer}>
     <Row style ={footerStyle} justify={'space-between'} align ={"middle"} >  
@@ -69,8 +69,8 @@ const animalButtonStyle = {
                         <Col xs={24} md={8}><p className = "normText"> 
                         CUSTOMER SERVICE: 651-487-8200</p></Col>
                     
-                    {/* <p className = "normText">CUSTOMER SERVICE: 651-487-8200 </p> */}
-                    {/* <Col span ={2}><Link  to = "/Animals"><Button style={animalButtonStyle}> Animals </Button></Link></Col>
+                    <p className = "normText">CUSTOMER SERVICE: 651-487-8200 </p>
+                    <Col span ={2}><Link  to = "/Animals"><Button style={animalButtonStyle}> Animals </Button></Link></Col>
                     <Col span ={2}><Link to ="/About"><Button  style={aboutButtonStyle}> About Us </Button></Link></Col>
 
                     {isLoggedIn ? (
@@ -80,7 +80,7 @@ const animalButtonStyle = {
                     )}
                     {!isLoggedIn && (
                         <Col span={2}><Link to="/SignUp"><Button style={signUpButtonStyle}>Sign Up</Button></Link></Col>
-                    )} */}
+                    )} 
                         <Col xs={24} md={4}><Link to ="/Reviews"><Button style ={reviewButtonStyle}>Reviews</Button></Link></Col>
                 </Row> 
         </footer>
