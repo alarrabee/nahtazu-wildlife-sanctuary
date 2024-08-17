@@ -37,7 +37,7 @@ const client = new ApolloClient({
 });
 
 // Initialize Stripe with your publishable key
-const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx'); // Replace with your actual Stripe publishable key
+const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
 
 
 
