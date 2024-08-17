@@ -6,14 +6,14 @@ import logo from '../../assets/logo.png'
 
 const headerStyle = {
     borderRadius: 6, 
-    border: '1px solid black',
+    border: '2px solid #7cb305',
     display: 'flex',
     alignItems: 'center',
     padding: '10px',
 };
 
 const logoImg = {
-    height: '150px'
+    height: '130px'
 };
 
 const buttonStyle = {
@@ -22,8 +22,8 @@ const buttonStyle = {
     padding: '15px',
     margin: '5px', 
     textAlign: 'center', 
-    minWidth: '150px', 
-    height: '50px', 
+    minWidth: '120px', 
+    height: '40px', 
 };
 
 const animalButtonStyle = {

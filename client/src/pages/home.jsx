@@ -12,8 +12,13 @@ import CarouselPic from '../components/Carousel'
 //  };
 
  const mainTitle ={
-    fontSize: "2.8vw"
+    fontSize: "2.8vw",
+    color: '#4CAF50'
  };
+
+ const naStyle = {
+    color: '#FF9800',
+};
 
  const dividerStyle = {
     borderColor: '#7cb305',
@@ -34,7 +39,7 @@ const Home = () => {
     return (
         <div>
             <Divider style={{ ...dividerStyle, ...mainTitle }}>
-                <h1 className= "titles">Welcome to Nahtazu</h1>
+                <h1 className= "titles">Welcome to Nah<span style={naStyle}>tA</span>zu</h1>
             </Divider>
 
            <CarouselPic></CarouselPic>
