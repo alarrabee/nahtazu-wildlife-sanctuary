@@ -17,14 +17,19 @@ const logoImg = {
 };
 
 const buttonStyleBase = {
-    flex: 1, 
     color: '#fff',
-    marginBottom: '5px', 
-    textAlign: 'center', 
-    minWidth: '120px', 
-    height: '40px',
+    marginBottom: '5px',
+    textAlign: 'center',
+    width: '100px', // Fixed width to ensure consistency
+    height: '40px', // Fixed height to ensure consistency
     fontSize: '15px',
     transition: 'transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out',
+    lineHeight: '40px', // Center text vertically
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    border: 'none',
+    outline: 'none',
 };
 
 // const animalButtonStyle = {
@@ -56,14 +61,23 @@ const Header = () => {
 
     const [hoveredButton, setHoveredButton] = useState(null);
     const getButtonStyle = (buttonType) => {
-      const baseStyle = { ...buttonStyleBase,
-        backgroundColor: buttonType === 'Animals' ? '#2196F3' : buttonType === 'About' ? '#FF9800' : buttonType === 'Login' ? '#9C27B0' : '#4CAF50',
-        transform: hoveredButton === buttonType ? 'scale(1.1)' : 'scale(1)',
-        boxShadow: hoveredButton === buttonType ? `0 0 2em ${buttonType === 'Animals' ? '#646cffaa' : buttonType === 'About' ? '#ff9800aa' : buttonType === 'Login' ? '#9c27b0aa' : '#4caf50aa'}` : 'none',
-        border: 'none',
-        outline: 'none',
-      };
-      return baseStyle;
+        const baseStyle = {
+            ...buttonStyleBase,
+            backgroundColor: buttonType === 'Animals' ? '#2196F3' :
+                buttonType === 'About' ? '#FF9800' :
+                buttonType === 'Login' ? '#9C27B0' :
+                buttonType === 'Reviews' ? '#FF5722' : '#4CAF50',
+            boxShadow: hoveredButton === buttonType ? `0 0 2em ${buttonType === 'Animals' ? '#646cffaa' :
+                buttonType === 'About' ? '#ff9800aa' :
+                buttonType === 'Login' ? '#9c27b0aa' :
+                buttonType === 'Reviews' ? '#ff5722aa' : '#4caf50aa'}` : 'none',
+        };
+
+        return {
+            ...baseStyle,
+            transform: hoveredButton === buttonType ? 'scale(1.1)' : 'scale(1)',
+            zIndex: hoveredButton === buttonType ? '1' : 'auto',
+        };
     };
 
     return (
@@ -78,7 +92,7 @@ const Header = () => {
                     <Col xs={24} md={18} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
 
                         <Row gutter={[16, 16]} style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-                            <Col xs={24} sm={12} md={6} style={{ display: 'flex', justifyContent: 'center' }}>
+                            <Col xs={24} sm={12} md={4} style={{ display: 'flex', justifyContent: 'center' }}>
                                 <Link to="/Animals">
                                     <Button  style={getButtonStyle('Animals')} onMouseEnter={() => setHoveredButton('Animals')} onMouseLeave={() => setHoveredButton(null)}>
                                         Animals
@@ -86,84 +100,57 @@ const Header = () => {
                                 </Link>
                             </Col>
 
-                            <Col xs={24} sm={12} md={6} style={{ display: 'flex', justifyContent: 'center' }}>
+                            <Col xs={24} sm={12} md={4} style={{ display: 'flex', justifyContent: 'center' }}>
                                 <Link to="/About">
-                                <Button
-
-style={getButtonStyle('About')}
-
-onMouseEnter={() => setHoveredButton('About')}
-
-onMouseLeave={() => setHoveredButton(null)}
-
->
-
-About Us
-
-</Button>
+                                    <Button style={getButtonStyle('About')} onMouseEnter={() => setHoveredButton('About')} onMouseLeave={() => setHoveredButton(null)}>
+                                        About Us
+                                    </Button>
                                 </Link>
                             </Col>
 
+                            {isLoggedIn && (
+
+                                <Col xs={24} sm={12} md={4} style={{ display: 'flex', justifyContent: 'center' }}>
+                                    <Link to="/Reviews">
+                                        <Button style={getButtonStyle('Reviews')} onMouseEnter={() => setHoveredButton('Reviews')} onMouseLeave={() => setHoveredButton(null)}>
+                                            Reviews
+                                        </Button>
+                                    </Link>
+                                </Col>
+                            )}
+
+
+
                             {isLoggedIn ? (
-                                <Col xs={24} sm={12} md={6} style={{ display: 'flex', justifyContent: 'center' }}>
-<Button
-
-style={getButtonStyle('Login')}
-
-onMouseEnter={() => setHoveredButton('Login')}
-
-onMouseLeave={() => setHoveredButton(null)}
-
-onClick={handleLogout}
-
->
-
-Logout
-
-</Button>
+                                <Col xs={24} sm={12} md={4} style={{ display: 'flex', justifyContent: 'center' }}>
+                                    <Button style={getButtonStyle('Login')} onMouseEnter={() => setHoveredButton('Login')} onMouseLeave={() => setHoveredButton(null)} onClick={handleLogout}>
+                                        Logout
+                                    </Button>
                                 </Col>
                             ) : (
-                                <Col xs={24} sm={12} md={6} style={{ display: 'flex', justifyContent: 'center' }}>
+                                <Col xs={24} sm={12} md={4} style={{ display: 'flex', justifyContent: 'center' }}>
                                     <Link to="/Login">
-                                    <Button
-
-style={getButtonStyle('Login')}
-
-onMouseEnter={() => setHoveredButton('Login')}
-
-onMouseLeave={() => setHoveredButton(null)}
-
->
-
-Login
-
-</Button>
+                                        <Button style={getButtonStyle('Login')} onMouseEnter={() => setHoveredButton('Login')} onMouseLeave={() => setHoveredButton(null)}>
+                                            Login
+                                        </Button>
                                     </Link>
                                 </Col>
                             )}
+
                             {!isLoggedIn && (
-                                <Col xs={24} sm={12} md={6} style={{ display: 'flex', justifyContent: 'center' }}>
+                                <Col xs={24} sm={12} md={4} style={{ display: 'flex', justifyContent: 'center' }}>
                                     <Link to="/SignUp">
-                                    <Button
-
-style={getButtonStyle('SignUp')}
-
-onMouseEnter={() => setHoveredButton('SignUp')}
-
-onMouseLeave={() => setHoveredButton(null)}
-
->
-
-Sign Up
-
-</Button>
+                                        <Button style={getButtonStyle('SignUp')} onMouseEnter={() => setHoveredButton('SignUp')} onMouseLeave={() => setHoveredButton(null)}>
+                                            Sign Up
+                                        </Button>
                                     </Link>
                                 </Col>
                             )}
+                            
                         </Row>
 
                     </Col>
-
+                    
                 </Row>
             </nav>
         </div>
