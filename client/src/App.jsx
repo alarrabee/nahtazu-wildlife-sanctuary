@@ -37,7 +37,7 @@ const client = new ApolloClient({
 });
 
 // Initialize Stripe with your publishable key
-const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx'); // Replace with your actual Stripe publishable key
+const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx'); 
 
 
 
@@ -48,7 +48,7 @@ function App() {
     <>
     <Header />
     <ApolloProvider client={client}>
-      <div style={{ background: '#f7f7f7', padding: '20px' }}>
+      <div style={{ background: '#f9faf7', paddingLeft: '30px', paddingRight: '30px' }}>
         <Outlet />
       </div>
       
