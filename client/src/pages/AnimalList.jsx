@@ -185,13 +185,14 @@ const MarkerWithPopup = ({ position, link, name }) => (
 );
 
 const AnimalList = () => {
-    const center = [44.7710, -93.195];
+    const center = [44.7710, -93.193];
 
     return (
         <MapContainer 
             center={center} 
             zoom={16.6} 
             style ={mapStyle}
+            zoomControl = {false}
             scrollWheelZoom={false}>
 
             <div>

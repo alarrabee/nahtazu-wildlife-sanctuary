@@ -4,14 +4,12 @@ import { Carousel } from 'antd';
 
   
   const imageContainerStyle = {
-    height: '400px', // Set a fixed height for the carousel
-    width: '100%',   // Ensure container takes full width
-    textAlign: 'center'
+
+
   };
   
   const imageStyle = {
-    maxWidth: '70%',
-    maxHeight: '100%',
+    maxWidth: '50%',
     objectFit: 'cover', // Ensures the image covers the container
     display: 'inline-block'
   };

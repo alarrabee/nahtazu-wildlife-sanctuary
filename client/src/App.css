@@ -2,11 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Jura:wght@300..700&display=swap');
 
 #root {
-  margin: 0 auto;
+  margin-left: 6%;
+  margin-right: 6%;
   font-family: "Jura", sans-serif;
   font-weight: 900;
   text-align: center;
   font-size: '50px';
+
 }
 
 .logo {

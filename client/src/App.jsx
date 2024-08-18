@@ -48,7 +48,7 @@ function App() {
     <>
     <Header />
     <ApolloProvider client={client}>
-      <div style={{ background: '#f7f7f7', padding: '20px' }}>
+      <div style={{ background: '#f9faf7', paddingLeft: '30px', paddingRight: '30px' }}>
         <Outlet />
       </div>
       
