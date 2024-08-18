@@ -151,7 +151,7 @@ This project is licensed under the MIT License.
 For any inquiries or feedback, feel free to reach out to any of the contributors:
 
 Alexandra Larrabee: [GitHub Profile](https://github.com/alarrabee)
-Austin L.: [GitHub Profile](https://github.com/austinl)
-Jaci Obeidzinski: [GitHub Profile](https://github.com/jaci23)
-Ben Parks: [GitHub Profile](https://github.com/benparks87)
-Elijah Ward: [GitHub Profile](https://github.com/eliward)
+Austin L.: [GitHub Profile](https://github.com/Kushonim)
+Jaci Obeidzinski: [GitHub Profile](https://github.com/JaciObeid)
+Ben Parks: [GitHub Profile](https://github.com/benjamin-parks)
+Elijah Ward: [GitHub Profile](https://github.com/ElijahWard4)
