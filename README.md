@@ -3,6 +3,9 @@ Nahtazu Wildlife Sanctuary 🦁
 
 Welcome to the Nahtazu Wildlife Sanctuary! This web application provides an interactive experience where users can virtually explore various animals and learn more about them. Additionally, the application integrates live streaming functionality that allows users to watch real-time footage of selected animals directly from their natural habitats via YouTube streams. The application also integrates Stripe for handling donations and uses Ant Design for a sleek and customizable UI.
 
+![home-page-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/0aeb434e-9a70-41ec-bf6e-3ac25d7dcf42)
+
+
 ## Table of Contents
 - [Features](#features)
 - [Technology Stack](#technology-stack)
@@ -134,8 +137,14 @@ Each animal page fetches and displays a live stream from YouTube based on the fo
 
 The live streams are embedded using YouTube's iframe API, dynamically loading the stream based on the selected animal.
 
+![animals-search-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/1766081d-9123-441f-a6f3-4b0705e802b9)
+
+
 ## Stripe Integration
 This application uses Stripe to securely handle payments and donations. When users choose to support the sanctuary by making a donation, Stripe processes the payment, ensuring that all transactions are handled securely and efficiently.
+
+<img width="1279" alt="signup" src="https://github.com/user-attachments/assets/5baf90e2-f0fd-4ebe-b406-62540b699856">
+
 
 ## Ant Design Integration
 Ant Design is a comprehensive and customizable UI library for building user interfaces with a clean and modern look.
