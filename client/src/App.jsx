@@ -54,6 +54,7 @@ function App() {
       
       {/* Wrap the Donate component with Elements provider */}
       <Elements stripe={stripePromise}>
+        <Donate />
       </Elements>
       <Footer/>
     </ApolloProvider>
