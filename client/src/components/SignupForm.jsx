@@ -7,6 +7,17 @@ import { ADD_USER } from '../utils/mutations';
 
 import Auth from '../utils/auth';
 
+const inputForm ={
+  width: '100%',
+  padding: '12px 20px',
+  margin: '8px 0',
+  display: 'inline-block',
+  border: '1px solid #ccc',
+  borderRadius: '4px',
+  boxSizing: 'border-box',
+}
+
+
 const Signup = () => {
   const [formState, setFormState] = useState({
     username: '',
@@ -48,7 +59,7 @@ const Signup = () => {
     <main className="flex-row justify-center mb-4">
       <div className="col-12 col-lg-10">
         <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>
+          <h4 className="card-header bg-dark text-light p-2" style={{ fontSize:'4vw'}}>Sign Up</h4>
           <div className="card-body">
             {data ? (
               <p>
@@ -57,33 +68,35 @@ const Signup = () => {
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>
-                <input
+                <label style={{ fontSize:'3vw'}}> Username</label><br></br>
+                <input style={inputForm}
                   className="form-input"
                   placeholder="Your username"
                   name="username"
                   type="text"
                   value={formState.username}
                   onChange={handleChange}
-                />
-                <input
+                /><br></br><br></br>
+                <label style={{ fontSize:'3vw'}}>Email</label><br></br>
+                <input style={inputForm}
                   className="form-input"
                   placeholder="Your email"
                   name="email"
                   type="email"
                   value={formState.email}
                   onChange={handleChange}
-                />
-                <input
+                /><br></br><br></br>
+                <label style={{ fontSize:'3vw'}}>Password</label><br></br>
+                <input style={inputForm}
                   className="form-input"
                   placeholder="******"
                   name="password"
                   type="password"
                   value={formState.password}
                   onChange={handleChange}
-                />
-                <button
+                /><br></br><br></br>
+                <button style={{ fontSize:'2vw',  margin:'5px',cursor: 'pointer'}}
                   className="btn btn-block btn-info"
-                  style={{ cursor: 'pointer' }}
                   type="submit"
                 >
                   Submit
